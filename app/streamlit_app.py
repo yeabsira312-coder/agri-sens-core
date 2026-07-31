@@ -2,16 +2,17 @@
 
 import os
 from pathlib import Path
+import pathlib
+import sys
+
+# 1. Path Patch: Add repository root directory to Python path first!
+sys.path.append(str(pathlib.Path(__file__).parent.parent))
 
 import numpy as np
 import pandas as pd
 import streamlit as st
-import sys
-import pathlib
 
-# Add repository root directory to Python path
-sys.path.append(str(pathlib.Path(__file__).parent.parent))
-# Configure Streamlit Page
+# 2. Configure Streamlit Page (Must be the first Streamlit command)
 st.set_page_config(
     page_title="AGRI-SENS-CORE-V1",
     page_icon="🌾",
@@ -19,13 +20,13 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# Load Custom CSS if present
+# 3. Load Custom CSS if present
 css_path = Path(__file__).parent / "assets" / "custom.css"
 if css_path.exists():
     with open(css_path, "r", encoding="utf-8") as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-# Import internal modules
+# 4. Import internal modules safely
 from src.analytics.anomalies import AnomalyDetectionEngine
 from src.analytics.indices import VegetationIndexEngine
 from src.analytics.risk_engine import RiskEngine

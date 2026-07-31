@@ -1,8 +1,8 @@
 """Main Streamlit Application Entrypoint for AGRI-SENS-CORE-V1."""
 
 import os
-from pathlib import Path
 import pathlib
+from pathlib import Path
 import sys
 
 # 1. Path Patch: Add repository root directory to Python path first!
@@ -12,7 +12,7 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 
-# 2. Configure Streamlit Page (Must be the first Streamlit command)
+# 2. Configure Streamlit Page (Must be the FIRST Streamlit call in the app)
 st.set_page_config(
     page_title="AGRI-SENS-CORE-V1",
     page_icon="🌾",

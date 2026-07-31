@@ -6,7 +6,11 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 import streamlit as st
+import sys
+import pathlib
 
+# Add repository root directory to Python path
+sys.path.append(str(pathlib.Path(__file__).parent.parent))
 # Configure Streamlit Page
 st.set_page_config(
     page_title="AGRI-SENS-CORE-V1",

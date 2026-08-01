@@ -165,22 +165,33 @@ RECOMMENDATIONS = {
     ),
 }
 
-# Updated Presets: Comprehensive coverage for Ethiopia and surrounding African agricultural belts
+# Updated Presets: Global Coverage across major worldwide agricultural belts
 AOI_PRESETS = {
-    "Oromia (Arsi / Bale Wheat Belt)": {"lat": 7.00, "lon": 39.00},
-    "Oromia (Jimma Coffee Belt)": {"lat": 7.67, "lon": 36.83},
-    "Amhara (Gondar / Gojjam Grain Belt)": {"lat": 11.60, "lon": 37.36},
-    "SNNPR / South Ethiopia (Sidama Coffee Zone)": {"lat": 6.83, "lon": 38.38},
-    "Tigray (Central Agricultural Zone)": {"lat": 13.80, "lon": 38.90},
-    "Somali Region (Jijiga Agro-Pastoral)": {"lat": 9.35, "lon": 42.80},
-    "Afar Region (Awash Valley Irrigation)": {"lat": 9.50, "lon": 40.50},
-    "Gambela Region (Lowland Agriculture)": {"lat": 8.25, "lon": 34.58},
-    "Benishangul-Gumuz (Asosa Zone)": {"lat": 10.06, "lon": 34.53},
-    "Harari / Dire Dawa Farming Zone": {"lat": 9.31, "lon": 42.13},
-    "East Africa: Kenya (Rift Valley)": {"lat": -0.30, "lon": 36.07},
-    "East Africa: Uganda (Central Maize & Coffee Zone)": {"lat": 0.31, "lon": 32.58},
-    "East Africa: Sudan (Gezira Agricultural Scheme)": {"lat": 14.40, "lon": 33.50},
-    "Custom Coordinates": {"lat": 9.03, "lon": 38.74},  # Default: Addis Ababa
+    # --- East Africa & Horn of Africa ---
+    "Ethiopia: Oromia (Arsi / Bale Wheat Belt)": {"lat": 7.00, "lon": 39.00},
+    "Ethiopia: Amhara (Gondar Grain Belt)": {"lat": 11.60, "lon": 37.36},
+    "Kenya: Rift Valley Maize Belt": {"lat": -0.30, "lon": 36.07},
+    "Sudan: Gezira Scheme": {"lat": 14.40, "lon": 33.50},
+
+    # --- Americas ---
+    "USA: Midwest Corn & Soy Belt (Iowa)": {"lat": 41.87, "lon": -93.09},
+    "USA: Central Valley Agriculture (California)": {"lat": 36.77, "lon": -119.41},
+    "Brazil: Mato Grosso Soy Belt": {"lat": -12.64, "lon": -55.42},
+    "Argentina: Pampas Grain Belt": {"lat": -34.60, "lon": -58.38},
+
+    # --- Europe & Central Asia ---
+    "Ukraine: Chernozem Wheat Belt": {"lat": 49.00, "lon": 32.00},
+    "France: Bassin Parisien Agriculture": {"lat": 48.85, "lon": 2.35},
+    "Spain: Andalusia Olive & Citrus Zone": {"lat": 37.38, "lon": -5.98},
+
+    # --- Asia & Pacific ---
+    "India: Punjab Wheat & Rice Belt": {"lat": 31.14, "lon": 75.34},
+    "China: North China Plain Grain Belt": {"lat": 36.00, "lon": 116.00},
+    "Vietnam: Mekong Delta Rice Belt": {"lat": 10.03, "lon": 105.78},
+    "Australia: Murray-Darling Agricultural Basin": {"lat": -35.00, "lon": 145.00},
+
+    # --- Custom Selection ---
+    "Custom Coordinates (Worldwide)": {"lat": 9.03, "lon": 38.74},
 }
 
 

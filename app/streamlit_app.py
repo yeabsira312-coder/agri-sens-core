@@ -11,6 +11,8 @@ sys.path.append(str(pathlib.Path(__file__).parent.parent))
 import numpy as np
 import pandas as pd
 import streamlit as st
+import streamlit.components.v1 as components
+
 
 # 2. Configure Streamlit Page (Must be the FIRST Streamlit call in the app)
 st.set_page_config(
@@ -25,6 +27,80 @@ css_path = Path(__file__).parent / "assets" / "custom.css"
 if css_path.exists():
     with open(css_path, "r", encoding="utf-8") as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+# --- PWA MANIFEST & SERVICE WORKER INJECTION ---
+pwa_code = """
+<script>
+  // 1. Inject Manifest if not already present
+  if (!document.querySelector('link[rel="manifest"]')) {
+    const manifest = {
+      "name": "AgriSens Core",
+      "short_name": "AgriSens",
+      "description": "Real-time satellite climate risk and agricultural analytics platform for crop monitoring and yield optimization.",
+      "start_url": "/",
+      "scope": "/",
+      "id": "com.agrisens.core",
+      "display": "standalone",
+      "display_override": ["standalone", "browser"],
+      "orientation": "portrait-primary",
+      "background_color": "#0D1117",
+      "theme_color": "#10B981",
+      "lang": "en",
+      "dir": "ltr",
+      "categories": ["agriculture", "productivity", "utilities"],
+      "icons": [
+        {
+          "src": "https://img.icons8.com/color/192/000000/sprout.png",
+          "sizes": "192x192",
+          "type": "image/png",
+          "purpose": "any maskable"
+        },
+        {
+          "src": "https://img.icons8.com/color/512/000000/sprout.png",
+          "sizes": "512x512",
+          "type": "image/png",
+          "purpose": "any maskable"
+        }
+      ],
+      "shortcuts": [
+        {
+          "name": "Dashboard",
+          "url": "/",
+          "description": "Open Climate Dashboard"
+        }
+      ]
+    };
+
+    const stringManifest = JSON.stringify(manifest);
+    const blob = new Blob([stringManifest], {type: 'application/json'});
+    const manifestURL = URL.createObjectURL(blob);
+    
+    let link = document.createElement('link');
+    link.rel = 'manifest';
+    link.href = manifestURL;
+    document.getElementsByTagName('head')[0].appendChild(link);
+  }
+
+  // 2. Register Service Worker
+  if ('serviceWorker' in navigator) {
+    const swCode = `
+      self.addEventListener('install', (e) => { self.skipWaiting(); });
+      self.addEventListener('activate', (e) => { return self.clients.claim(); });
+      self.addEventListener('fetch', (e) => {
+        e.respondWith(fetch(e.request).catch(() => new Response('Offline')));
+      });
+    `;
+    const swBlob = new Blob([swCode], {type: 'text/javascript'});
+    const swURL = URL.createObjectURL(swBlob);
+
+    navigator.serviceWorker.register(swURL).catch(err => console.log('SW registration error:', err));
+  }
+</script>
+"""
+
+# Render hidden PWA controller
+components.html(pwa_code, height=0, width=0)
+
 
 # 4. Import internal modules safely
 from src.analytics.anomalies import AnomalyDetectionEngine

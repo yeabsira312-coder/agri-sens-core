@@ -1,0 +1,318 @@
+2026-07-31 21:20:52 | INFO     | agri_sens:logger.py:118 - Module info test message
+2026-07-31 21:20:52 | WARNING  | agri_sens:logger.py:123 - Module warning test message
+2026-07-31 21:20:52 | ERROR    | agri_sens:logger.py:128 - Module error test message
+2026-07-31 21:20:52 | CRITICAL | agri_sens:logger.py:138 - Module critical test message
+2026-07-31 21:21:07 | INFO     | agri_sens:logger.py:118 - Module info test message
+2026-07-31 21:21:07 | WARNING  | agri_sens:logger.py:123 - Module warning test message
+2026-07-31 21:21:07 | ERROR    | agri_sens:logger.py:128 - Module error test message
+2026-07-31 21:21:07 | CRITICAL | agri_sens:logger.py:138 - Module critical test message
+2026-07-31 21:26:21 | INFO     | agri_sens:logger.py:118 - Module info test message
+2026-07-31 21:26:21 | WARNING  | agri_sens:logger.py:123 - Module warning test message
+2026-07-31 21:26:21 | ERROR    | agri_sens:logger.py:128 - Module error test message
+2026-07-31 21:26:21 | CRITICAL | agri_sens:logger.py:138 - Module critical test message
+2026-07-31 21:26:47 | INFO     | agri_sens:logger.py:118 - Module info test message
+2026-07-31 21:26:47 | WARNING  | agri_sens:logger.py:123 - Module warning test message
+2026-07-31 21:26:47 | ERROR    | agri_sens:logger.py:128 - Module error test message
+2026-07-31 21:26:47 | CRITICAL | agri_sens:logger.py:138 - Module critical test message
+2026-07-31 21:26:47 | INFO     | agri_sens.ingestion.climate:climate_api.py:41 - Initialized NASADataPowerIngestionEngine with URL: https://power.larc.nasa.gov/api/temporal/daily/point
+2026-07-31 21:26:47 | INFO     | agri_sens.ingestion.climate:climate_api.py:41 - Initialized NASADataPowerIngestionEngine with URL: https://power.larc.nasa.gov/api/temporal/daily/point
+2026-07-31 21:26:47 | INFO     | agri_sens.ingestion.climate:climate_api.py:103 - Querying NASA POWER API for lat=-1.28, lon=36.82, period=20230101-20230105
+2026-07-31 21:26:47 | INFO     | agri_sens.ingestion.climate:climate_api.py:41 - Initialized NASADataPowerIngestionEngine with URL: https://power.larc.nasa.gov/api/temporal/daily/point
+2026-07-31 21:26:47 | INFO     | agri_sens.ingestion.climate:climate_api.py:103 - Querying NASA POWER API for lat=-1.28, lon=36.82, period=20230101-20230105
+2026-07-31 21:26:47 | INFO     | agri_sens.ingestion.climate:climate_api.py:183 - Converting Land Surface Temperature (TS) from Kelvin to Celsius.
+2026-07-31 21:26:47 | INFO     | agri_sens.ingestion.climate:climate_api.py:191 - Successfully parsed NASA POWER data (2 daily records).
+2026-07-31 21:26:47 | INFO     | agri_sens.ingestion.climate:climate_api.py:41 - Initialized NASADataPowerIngestionEngine with URL: https://power.larc.nasa.gov/api/temporal/daily/point
+2026-07-31 21:26:47 | INFO     | agri_sens.ingestion.stac:stac_client.py:64 - Initialized SentinelSTACIngestionEngine with catalog: https://planetarycomputer.microsoft.com/api/stac/v1
+2026-07-31 21:26:47 | INFO     | agri_sens.ingestion.stac:stac_client.py:64 - Initialized SentinelSTACIngestionEngine with catalog: https://planetarycomputer.microsoft.com/api/stac/v1
+2026-07-31 21:26:47 | INFO     | agri_sens.ingestion.stac:stac_client.py:64 - Initialized SentinelSTACIngestionEngine with catalog: https://planetarycomputer.microsoft.com/api/stac/v1
+2026-07-31 21:26:47 | INFO     | agri_sens.ingestion.stac:stac_client.py:111 - Searching STAC scenes: collection=sentinel-2-l2a, bbox=(36.8, -1.3, 37.0, -1.1), date_range=2023-01-01/2023-01-31, max_cloud=10.0%
+2026-07-31 21:26:47 | WARNING  | agri_sens.ingestion.stac:stac_client.py:148 - Found 1 scenes, but all exceed max cloud cover of 10.0%. Lowest cloud cover: 50.0%
+2026-07-31 21:26:47 | INFO     | agri_sens.ingestion.stac:stac_client.py:64 - Initialized SentinelSTACIngestionEngine with catalog: https://planetarycomputer.microsoft.com/api/stac/v1
+2026-07-31 21:26:47 | INFO     | agri_sens.ingestion.stac:stac_client.py:111 - Searching STAC scenes: collection=sentinel-2-l2a, bbox=(36.8, -1.3, 37.0, -1.1), date_range=2023-01-01/2023-01-31, max_cloud=10.0%
+2026-07-31 21:26:47 | ERROR    | agri_sens.ingestion.stac:stac_client.py:161 - No STAC scenes found for specified bbox and date range.
+2026-07-31 21:26:47 | INFO     | agri_sens.ingestion.stac:stac_client.py:64 - Initialized SentinelSTACIngestionEngine with catalog: https://planetarycomputer.microsoft.com/api/stac/v1
+2026-07-31 21:26:47 | INFO     | agri_sens.ingestion.stac:stac_client.py:111 - Searching STAC scenes: collection=sentinel-2-l2a, bbox=(36.8, -1.3, 37.0, -1.1), date_range=2023-01-01/2023-01-31, max_cloud=10.0%
+2026-07-31 21:26:47 | INFO     | agri_sens.ingestion.stac:stac_client.py:167 - Successfully retrieved 1 STAC scenes matching criteria.
+2026-07-31 21:26:58 | INFO     | agri_sens:logger.py:118 - Module info test message
+2026-07-31 21:26:58 | WARNING  | agri_sens:logger.py:123 - Module warning test message
+2026-07-31 21:26:58 | ERROR    | agri_sens:logger.py:128 - Module error test message
+2026-07-31 21:26:58 | CRITICAL | agri_sens:logger.py:138 - Module critical test message
+2026-07-31 21:26:58 | INFO     | agri_sens.ingestion.climate:climate_api.py:41 - Initialized NASADataPowerIngestionEngine with URL: https://power.larc.nasa.gov/api/temporal/daily/point
+2026-07-31 21:26:58 | INFO     | agri_sens.ingestion.climate:climate_api.py:41 - Initialized NASADataPowerIngestionEngine with URL: https://power.larc.nasa.gov/api/temporal/daily/point
+2026-07-31 21:26:58 | INFO     | agri_sens.ingestion.climate:climate_api.py:103 - Querying NASA POWER API for lat=-1.28, lon=36.82, period=20230101-20230105
+2026-07-31 21:26:58 | ERROR    | agri_sens.ingestion.climate:climate_api.py:119 - HTTP request error while accessing NASA POWER API: 500 Server Error
+2026-07-31 21:26:58 | INFO     | agri_sens.ingestion.climate:climate_api.py:41 - Initialized NASADataPowerIngestionEngine with URL: https://power.larc.nasa.gov/api/temporal/daily/point
+2026-07-31 21:26:58 | INFO     | agri_sens.ingestion.climate:climate_api.py:103 - Querying NASA POWER API for lat=-1.28, lon=36.82, period=20230101-20230105
+2026-07-31 21:26:58 | INFO     | agri_sens.ingestion.climate:climate_api.py:184 - Converting Land Surface Temperature (TS) from Kelvin to Celsius.
+2026-07-31 21:26:58 | INFO     | agri_sens.ingestion.climate:climate_api.py:192 - Successfully parsed NASA POWER data (2 daily records).
+2026-07-31 21:26:58 | INFO     | agri_sens.ingestion.climate:climate_api.py:41 - Initialized NASADataPowerIngestionEngine with URL: https://power.larc.nasa.gov/api/temporal/daily/point
+2026-07-31 21:26:58 | INFO     | agri_sens.ingestion.stac:stac_client.py:64 - Initialized SentinelSTACIngestionEngine with catalog: https://planetarycomputer.microsoft.com/api/stac/v1
+2026-07-31 21:26:58 | INFO     | agri_sens.ingestion.stac:stac_client.py:64 - Initialized SentinelSTACIngestionEngine with catalog: https://planetarycomputer.microsoft.com/api/stac/v1
+2026-07-31 21:26:58 | INFO     | agri_sens.ingestion.stac:stac_client.py:64 - Initialized SentinelSTACIngestionEngine with catalog: https://planetarycomputer.microsoft.com/api/stac/v1
+2026-07-31 21:26:58 | INFO     | agri_sens.ingestion.stac:stac_client.py:111 - Searching STAC scenes: collection=sentinel-2-l2a, bbox=(36.8, -1.3, 37.0, -1.1), date_range=2023-01-01/2023-01-31, max_cloud=10.0%
+2026-07-31 21:26:58 | WARNING  | agri_sens.ingestion.stac:stac_client.py:148 - Found 1 scenes, but all exceed max cloud cover of 10.0%. Lowest cloud cover: 50.0%
+2026-07-31 21:26:58 | INFO     | agri_sens.ingestion.stac:stac_client.py:64 - Initialized SentinelSTACIngestionEngine with catalog: https://planetarycomputer.microsoft.com/api/stac/v1
+2026-07-31 21:26:58 | INFO     | agri_sens.ingestion.stac:stac_client.py:111 - Searching STAC scenes: collection=sentinel-2-l2a, bbox=(36.8, -1.3, 37.0, -1.1), date_range=2023-01-01/2023-01-31, max_cloud=10.0%
+2026-07-31 21:26:58 | ERROR    | agri_sens.ingestion.stac:stac_client.py:161 - No STAC scenes found for specified bbox and date range.
+2026-07-31 21:26:58 | INFO     | agri_sens.ingestion.stac:stac_client.py:64 - Initialized SentinelSTACIngestionEngine with catalog: https://planetarycomputer.microsoft.com/api/stac/v1
+2026-07-31 21:26:58 | INFO     | agri_sens.ingestion.stac:stac_client.py:111 - Searching STAC scenes: collection=sentinel-2-l2a, bbox=(36.8, -1.3, 37.0, -1.1), date_range=2023-01-01/2023-01-31, max_cloud=10.0%
+2026-07-31 21:26:58 | INFO     | agri_sens.ingestion.stac:stac_client.py:167 - Successfully retrieved 1 STAC scenes matching criteria.
+2026-07-31 21:29:40 | INFO     | agri_sens:logger.py:118 - Module info test message
+2026-07-31 21:29:40 | WARNING  | agri_sens:logger.py:123 - Module warning test message
+2026-07-31 21:29:40 | ERROR    | agri_sens:logger.py:128 - Module error test message
+2026-07-31 21:29:40 | CRITICAL | agri_sens:logger.py:138 - Module critical test message
+2026-07-31 21:29:40 | INFO     | agri_sens.ingestion.climate:climate_api.py:41 - Initialized NASADataPowerIngestionEngine with URL: https://power.larc.nasa.gov/api/temporal/daily/point
+2026-07-31 21:29:40 | INFO     | agri_sens.ingestion.climate:climate_api.py:41 - Initialized NASADataPowerIngestionEngine with URL: https://power.larc.nasa.gov/api/temporal/daily/point
+2026-07-31 21:29:40 | INFO     | agri_sens.ingestion.climate:climate_api.py:103 - Querying NASA POWER API for lat=-1.28, lon=36.82, period=20230101-20230105
+2026-07-31 21:29:40 | ERROR    | agri_sens.ingestion.climate:climate_api.py:119 - HTTP request error while accessing NASA POWER API: 500 Server Error
+2026-07-31 21:29:40 | INFO     | agri_sens.ingestion.climate:climate_api.py:41 - Initialized NASADataPowerIngestionEngine with URL: https://power.larc.nasa.gov/api/temporal/daily/point
+2026-07-31 21:29:40 | INFO     | agri_sens.ingestion.climate:climate_api.py:103 - Querying NASA POWER API for lat=-1.28, lon=36.82, period=20230101-20230105
+2026-07-31 21:29:40 | INFO     | agri_sens.ingestion.climate:climate_api.py:184 - Converting Land Surface Temperature (TS) from Kelvin to Celsius.
+2026-07-31 21:29:40 | INFO     | agri_sens.ingestion.climate:climate_api.py:192 - Successfully parsed NASA POWER data (2 daily records).
+2026-07-31 21:29:40 | INFO     | agri_sens.ingestion.climate:climate_api.py:41 - Initialized NASADataPowerIngestionEngine with URL: https://power.larc.nasa.gov/api/temporal/daily/point
+2026-07-31 21:29:40 | INFO     | agri_sens.ingestion.stac:stac_client.py:64 - Initialized SentinelSTACIngestionEngine with catalog: https://planetarycomputer.microsoft.com/api/stac/v1
+2026-07-31 21:29:40 | INFO     | agri_sens.ingestion.stac:stac_client.py:64 - Initialized SentinelSTACIngestionEngine with catalog: https://planetarycomputer.microsoft.com/api/stac/v1
+2026-07-31 21:29:40 | INFO     | agri_sens.ingestion.stac:stac_client.py:64 - Initialized SentinelSTACIngestionEngine with catalog: https://planetarycomputer.microsoft.com/api/stac/v1
+2026-07-31 21:29:40 | INFO     | agri_sens.ingestion.stac:stac_client.py:111 - Searching STAC scenes: collection=sentinel-2-l2a, bbox=(36.8, -1.3, 37.0, -1.1), date_range=2023-01-01/2023-01-31, max_cloud=10.0%
+2026-07-31 21:29:40 | WARNING  | agri_sens.ingestion.stac:stac_client.py:148 - Found 1 scenes, but all exceed max cloud cover of 10.0%. Lowest cloud cover: 50.0%
+2026-07-31 21:29:40 | INFO     | agri_sens.ingestion.stac:stac_client.py:64 - Initialized SentinelSTACIngestionEngine with catalog: https://planetarycomputer.microsoft.com/api/stac/v1
+2026-07-31 21:29:40 | INFO     | agri_sens.ingestion.stac:stac_client.py:111 - Searching STAC scenes: collection=sentinel-2-l2a, bbox=(36.8, -1.3, 37.0, -1.1), date_range=2023-01-01/2023-01-31, max_cloud=10.0%
+2026-07-31 21:29:40 | ERROR    | agri_sens.ingestion.stac:stac_client.py:161 - No STAC scenes found for specified bbox and date range.
+2026-07-31 21:29:40 | INFO     | agri_sens.ingestion.stac:stac_client.py:64 - Initialized SentinelSTACIngestionEngine with catalog: https://planetarycomputer.microsoft.com/api/stac/v1
+2026-07-31 21:29:40 | INFO     | agri_sens.ingestion.stac:stac_client.py:111 - Searching STAC scenes: collection=sentinel-2-l2a, bbox=(36.8, -1.3, 37.0, -1.1), date_range=2023-01-01/2023-01-31, max_cloud=10.0%
+2026-07-31 21:29:40 | INFO     | agri_sens.ingestion.stac:stac_client.py:167 - Successfully retrieved 1 STAC scenes matching criteria.
+2026-07-31 21:29:40 | INFO     | agri_sens.preprocessing.reproject:reproject.py:51 - Aligning spatial grid to target_crs='EPSG:4326', resolution=0.0001
+2026-07-31 21:31:56 | INFO     | agri_sens.analytics.anomalies:anomalies.py:43 - Computing weekly Z-scores for climate variables (sm_col='GWETTOP', lst_col='TS_C')
+2026-07-31 21:31:56 | INFO     | agri_sens.analytics.anomalies:anomalies.py:104 - Successfully computed weekly climate Z-scores and risk flags.
+2026-07-31 21:31:56 | INFO     | agri_sens.analytics.anomalies:anomalies.py:43 - Computing weekly Z-scores for climate variables (sm_col='GWETTOP', lst_col='TS_C')
+2026-07-31 21:31:56 | ERROR    | agri_sens.analytics.anomalies:anomalies.py:46 - Input DataFrame index is not a DatetimeIndex.
+2026-07-31 21:31:56 | INFO     | agri_sens.analytics.anomalies:anomalies.py:43 - Computing weekly Z-scores for climate variables (sm_col='GWETTOP', lst_col='TS_C')
+2026-07-31 21:31:56 | INFO     | agri_sens.analytics.anomalies:anomalies.py:104 - Successfully computed weekly climate Z-scores and risk flags.
+2026-07-31 21:31:56 | INFO     | agri_sens.analytics.risk_engine:risk_engine.py:108 - Calculated CARI score: 36.14 -> Tier: 'MODERATE STRESS'
+2026-07-31 21:31:56 | INFO     | agri_sens.analytics.risk_engine:risk_engine.py:108 - Calculated CARI score: 95.78 -> Tier: 'CRITICAL RISK'
+2026-07-31 21:31:56 | INFO     | agri_sens.analytics.risk_engine:risk_engine.py:108 - Calculated CARI score: 42.65 -> Tier: 'MODERATE STRESS'
+2026-07-31 21:31:56 | ERROR    | agri_sens.analytics.indices:indices.py:98 - Error computing NDVI: float division by zero
+2026-07-31 21:31:56 | INFO     | agri_sens:logger.py:118 - Module info test message
+2026-07-31 21:31:56 | WARNING  | agri_sens:logger.py:123 - Module warning test message
+2026-07-31 21:31:56 | ERROR    | agri_sens:logger.py:128 - Module error test message
+2026-07-31 21:31:56 | CRITICAL | agri_sens:logger.py:138 - Module critical test message
+2026-07-31 21:31:56 | INFO     | agri_sens.ingestion.climate:climate_api.py:41 - Initialized NASADataPowerIngestionEngine with URL: https://power.larc.nasa.gov/api/temporal/daily/point
+2026-07-31 21:31:56 | INFO     | agri_sens.ingestion.climate:climate_api.py:41 - Initialized NASADataPowerIngestionEngine with URL: https://power.larc.nasa.gov/api/temporal/daily/point
+2026-07-31 21:31:56 | INFO     | agri_sens.ingestion.climate:climate_api.py:103 - Querying NASA POWER API for lat=-1.28, lon=36.82, period=20230101-20230105
+2026-07-31 21:31:56 | ERROR    | agri_sens.ingestion.climate:climate_api.py:119 - HTTP request error while accessing NASA POWER API: 500 Server Error
+2026-07-31 21:31:56 | INFO     | agri_sens.ingestion.climate:climate_api.py:41 - Initialized NASADataPowerIngestionEngine with URL: https://power.larc.nasa.gov/api/temporal/daily/point
+2026-07-31 21:31:56 | INFO     | agri_sens.ingestion.climate:climate_api.py:103 - Querying NASA POWER API for lat=-1.28, lon=36.82, period=20230101-20230105
+2026-07-31 21:31:56 | INFO     | agri_sens.ingestion.climate:climate_api.py:184 - Converting Land Surface Temperature (TS) from Kelvin to Celsius.
+2026-07-31 21:31:56 | INFO     | agri_sens.ingestion.climate:climate_api.py:192 - Successfully parsed NASA POWER data (2 daily records).
+2026-07-31 21:31:56 | INFO     | agri_sens.ingestion.climate:climate_api.py:41 - Initialized NASADataPowerIngestionEngine with URL: https://power.larc.nasa.gov/api/temporal/daily/point
+2026-07-31 21:31:56 | INFO     | agri_sens.ingestion.stac:stac_client.py:64 - Initialized SentinelSTACIngestionEngine with catalog: https://planetarycomputer.microsoft.com/api/stac/v1
+2026-07-31 21:31:56 | INFO     | agri_sens.ingestion.stac:stac_client.py:64 - Initialized SentinelSTACIngestionEngine with catalog: https://planetarycomputer.microsoft.com/api/stac/v1
+2026-07-31 21:31:56 | INFO     | agri_sens.ingestion.stac:stac_client.py:64 - Initialized SentinelSTACIngestionEngine with catalog: https://planetarycomputer.microsoft.com/api/stac/v1
+2026-07-31 21:31:56 | INFO     | agri_sens.ingestion.stac:stac_client.py:111 - Searching STAC scenes: collection=sentinel-2-l2a, bbox=(36.8, -1.3, 37.0, -1.1), date_range=2023-01-01/2023-01-31, max_cloud=10.0%
+2026-07-31 21:31:56 | WARNING  | agri_sens.ingestion.stac:stac_client.py:148 - Found 1 scenes, but all exceed max cloud cover of 10.0%. Lowest cloud cover: 50.0%
+2026-07-31 21:31:56 | INFO     | agri_sens.ingestion.stac:stac_client.py:64 - Initialized SentinelSTACIngestionEngine with catalog: https://planetarycomputer.microsoft.com/api/stac/v1
+2026-07-31 21:31:56 | INFO     | agri_sens.ingestion.stac:stac_client.py:111 - Searching STAC scenes: collection=sentinel-2-l2a, bbox=(36.8, -1.3, 37.0, -1.1), date_range=2023-01-01/2023-01-31, max_cloud=10.0%
+2026-07-31 21:31:56 | ERROR    | agri_sens.ingestion.stac:stac_client.py:161 - No STAC scenes found for specified bbox and date range.
+2026-07-31 21:31:56 | INFO     | agri_sens.ingestion.stac:stac_client.py:64 - Initialized SentinelSTACIngestionEngine with catalog: https://planetarycomputer.microsoft.com/api/stac/v1
+2026-07-31 21:31:56 | INFO     | agri_sens.ingestion.stac:stac_client.py:111 - Searching STAC scenes: collection=sentinel-2-l2a, bbox=(36.8, -1.3, 37.0, -1.1), date_range=2023-01-01/2023-01-31, max_cloud=10.0%
+2026-07-31 21:31:56 | INFO     | agri_sens.ingestion.stac:stac_client.py:167 - Successfully retrieved 1 STAC scenes matching criteria.
+2026-07-31 21:31:56 | INFO     | agri_sens.preprocessing.reproject:reproject.py:51 - Aligning spatial grid to target_crs='EPSG:4326', resolution=0.0001
+2026-07-31 21:32:10 | INFO     | agri_sens.analytics.anomalies:anomalies.py:43 - Computing weekly Z-scores for climate variables (sm_col='GWETTOP', lst_col='TS_C')
+2026-07-31 21:32:10 | INFO     | agri_sens.analytics.anomalies:anomalies.py:104 - Successfully computed weekly climate Z-scores and risk flags.
+2026-07-31 21:32:10 | INFO     | agri_sens.analytics.anomalies:anomalies.py:43 - Computing weekly Z-scores for climate variables (sm_col='GWETTOP', lst_col='TS_C')
+2026-07-31 21:32:10 | ERROR    | agri_sens.analytics.anomalies:anomalies.py:46 - Input DataFrame index is not a DatetimeIndex.
+2026-07-31 21:32:10 | INFO     | agri_sens.analytics.anomalies:anomalies.py:43 - Computing weekly Z-scores for climate variables (sm_col='GWETTOP', lst_col='TS_C')
+2026-07-31 21:32:10 | INFO     | agri_sens.analytics.anomalies:anomalies.py:104 - Successfully computed weekly climate Z-scores and risk flags.
+2026-07-31 21:32:10 | INFO     | agri_sens.analytics.risk_engine:risk_engine.py:108 - Calculated CARI score: 17.91 -> Tier: 'NOMINAL'
+2026-07-31 21:32:10 | INFO     | agri_sens.analytics.risk_engine:risk_engine.py:108 - Calculated CARI score: 50.0 -> Tier: 'MODERATE STRESS'
+2026-07-31 21:32:10 | INFO     | agri_sens.analytics.risk_engine:risk_engine.py:108 - Calculated CARI score: 95.78 -> Tier: 'CRITICAL RISK'
+2026-07-31 21:32:10 | INFO     | agri_sens.analytics.risk_engine:risk_engine.py:108 - Calculated CARI score: 17.91 -> Tier: 'NOMINAL'
+2026-07-31 21:32:10 | INFO     | agri_sens:logger.py:118 - Module info test message
+2026-07-31 21:32:10 | WARNING  | agri_sens:logger.py:123 - Module warning test message
+2026-07-31 21:32:10 | ERROR    | agri_sens:logger.py:128 - Module error test message
+2026-07-31 21:32:10 | CRITICAL | agri_sens:logger.py:138 - Module critical test message
+2026-07-31 21:32:10 | INFO     | agri_sens.ingestion.climate:climate_api.py:41 - Initialized NASADataPowerIngestionEngine with URL: https://power.larc.nasa.gov/api/temporal/daily/point
+2026-07-31 21:32:10 | INFO     | agri_sens.ingestion.climate:climate_api.py:41 - Initialized NASADataPowerIngestionEngine with URL: https://power.larc.nasa.gov/api/temporal/daily/point
+2026-07-31 21:32:10 | INFO     | agri_sens.ingestion.climate:climate_api.py:103 - Querying NASA POWER API for lat=-1.28, lon=36.82, period=20230101-20230105
+2026-07-31 21:32:10 | ERROR    | agri_sens.ingestion.climate:climate_api.py:119 - HTTP request error while accessing NASA POWER API: 500 Server Error
+2026-07-31 21:32:10 | INFO     | agri_sens.ingestion.climate:climate_api.py:41 - Initialized NASADataPowerIngestionEngine with URL: https://power.larc.nasa.gov/api/temporal/daily/point
+2026-07-31 21:32:10 | INFO     | agri_sens.ingestion.climate:climate_api.py:103 - Querying NASA POWER API for lat=-1.28, lon=36.82, period=20230101-20230105
+2026-07-31 21:32:10 | INFO     | agri_sens.ingestion.climate:climate_api.py:184 - Converting Land Surface Temperature (TS) from Kelvin to Celsius.
+2026-07-31 21:32:10 | INFO     | agri_sens.ingestion.climate:climate_api.py:192 - Successfully parsed NASA POWER data (2 daily records).
+2026-07-31 21:32:10 | INFO     | agri_sens.ingestion.climate:climate_api.py:41 - Initialized NASADataPowerIngestionEngine with URL: https://power.larc.nasa.gov/api/temporal/daily/point
+2026-07-31 21:32:10 | INFO     | agri_sens.ingestion.stac:stac_client.py:64 - Initialized SentinelSTACIngestionEngine with catalog: https://planetarycomputer.microsoft.com/api/stac/v1
+2026-07-31 21:32:10 | INFO     | agri_sens.ingestion.stac:stac_client.py:64 - Initialized SentinelSTACIngestionEngine with catalog: https://planetarycomputer.microsoft.com/api/stac/v1
+2026-07-31 21:32:10 | INFO     | agri_sens.ingestion.stac:stac_client.py:64 - Initialized SentinelSTACIngestionEngine with catalog: https://planetarycomputer.microsoft.com/api/stac/v1
+2026-07-31 21:32:10 | INFO     | agri_sens.ingestion.stac:stac_client.py:111 - Searching STAC scenes: collection=sentinel-2-l2a, bbox=(36.8, -1.3, 37.0, -1.1), date_range=2023-01-01/2023-01-31, max_cloud=10.0%
+2026-07-31 21:32:10 | WARNING  | agri_sens.ingestion.stac:stac_client.py:148 - Found 1 scenes, but all exceed max cloud cover of 10.0%. Lowest cloud cover: 50.0%
+2026-07-31 21:32:10 | INFO     | agri_sens.ingestion.stac:stac_client.py:64 - Initialized SentinelSTACIngestionEngine with catalog: https://planetarycomputer.microsoft.com/api/stac/v1
+2026-07-31 21:32:10 | INFO     | agri_sens.ingestion.stac:stac_client.py:111 - Searching STAC scenes: collection=sentinel-2-l2a, bbox=(36.8, -1.3, 37.0, -1.1), date_range=2023-01-01/2023-01-31, max_cloud=10.0%
+2026-07-31 21:32:10 | ERROR    | agri_sens.ingestion.stac:stac_client.py:161 - No STAC scenes found for specified bbox and date range.
+2026-07-31 21:32:10 | INFO     | agri_sens.ingestion.stac:stac_client.py:64 - Initialized SentinelSTACIngestionEngine with catalog: https://planetarycomputer.microsoft.com/api/stac/v1
+2026-07-31 21:32:10 | INFO     | agri_sens.ingestion.stac:stac_client.py:111 - Searching STAC scenes: collection=sentinel-2-l2a, bbox=(36.8, -1.3, 37.0, -1.1), date_range=2023-01-01/2023-01-31, max_cloud=10.0%
+2026-07-31 21:32:10 | INFO     | agri_sens.ingestion.stac:stac_client.py:167 - Successfully retrieved 1 STAC scenes matching criteria.
+2026-07-31 21:32:10 | INFO     | agri_sens.preprocessing.reproject:reproject.py:51 - Aligning spatial grid to target_crs='EPSG:4326', resolution=0.0001
+2026-07-31 21:34:48 | INFO     | agri_sens.analytics.anomalies:anomalies.py:43 - Computing weekly Z-scores for climate variables (sm_col='GWETTOP', lst_col='TS_C')
+2026-07-31 21:34:48 | INFO     | agri_sens.analytics.anomalies:anomalies.py:104 - Successfully computed weekly climate Z-scores and risk flags.
+2026-07-31 21:34:48 | INFO     | agri_sens.analytics.anomalies:anomalies.py:43 - Computing weekly Z-scores for climate variables (sm_col='GWETTOP', lst_col='TS_C')
+2026-07-31 21:34:48 | ERROR    | agri_sens.analytics.anomalies:anomalies.py:46 - Input DataFrame index is not a DatetimeIndex.
+2026-07-31 21:34:48 | INFO     | agri_sens.analytics.anomalies:anomalies.py:43 - Computing weekly Z-scores for climate variables (sm_col='GWETTOP', lst_col='TS_C')
+2026-07-31 21:34:48 | INFO     | agri_sens.analytics.anomalies:anomalies.py:104 - Successfully computed weekly climate Z-scores and risk flags.
+2026-07-31 21:34:48 | INFO     | agri_sens.analytics.risk_engine:risk_engine.py:108 - Calculated CARI score: 17.91 -> Tier: 'NOMINAL'
+2026-07-31 21:34:48 | INFO     | agri_sens.analytics.risk_engine:risk_engine.py:108 - Calculated CARI score: 50.0 -> Tier: 'MODERATE STRESS'
+2026-07-31 21:34:48 | INFO     | agri_sens.analytics.risk_engine:risk_engine.py:108 - Calculated CARI score: 95.78 -> Tier: 'CRITICAL RISK'
+2026-07-31 21:34:48 | INFO     | agri_sens.analytics.risk_engine:risk_engine.py:108 - Calculated CARI score: 17.91 -> Tier: 'NOMINAL'
+2026-07-31 21:34:48 | INFO     | agri_sens:logger.py:118 - Module info test message
+2026-07-31 21:34:48 | WARNING  | agri_sens:logger.py:123 - Module warning test message
+2026-07-31 21:34:48 | ERROR    | agri_sens:logger.py:128 - Module error test message
+2026-07-31 21:34:48 | CRITICAL | agri_sens:logger.py:138 - Module critical test message
+2026-07-31 21:34:48 | INFO     | agri_sens.ingestion.climate:climate_api.py:41 - Initialized NASADataPowerIngestionEngine with URL: https://power.larc.nasa.gov/api/temporal/daily/point
+2026-07-31 21:34:48 | INFO     | agri_sens.ingestion.climate:climate_api.py:41 - Initialized NASADataPowerIngestionEngine with URL: https://power.larc.nasa.gov/api/temporal/daily/point
+2026-07-31 21:34:48 | INFO     | agri_sens.ingestion.climate:climate_api.py:103 - Querying NASA POWER API for lat=-1.28, lon=36.82, period=20230101-20230105
+2026-07-31 21:34:48 | ERROR    | agri_sens.ingestion.climate:climate_api.py:119 - HTTP request error while accessing NASA POWER API: 500 Server Error
+2026-07-31 21:34:48 | INFO     | agri_sens.ingestion.climate:climate_api.py:41 - Initialized NASADataPowerIngestionEngine with URL: https://power.larc.nasa.gov/api/temporal/daily/point
+2026-07-31 21:34:48 | INFO     | agri_sens.ingestion.climate:climate_api.py:103 - Querying NASA POWER API for lat=-1.28, lon=36.82, period=20230101-20230105
+2026-07-31 21:34:48 | INFO     | agri_sens.ingestion.climate:climate_api.py:184 - Converting Land Surface Temperature (TS) from Kelvin to Celsius.
+2026-07-31 21:34:48 | INFO     | agri_sens.ingestion.climate:climate_api.py:192 - Successfully parsed NASA POWER data (2 daily records).
+2026-07-31 21:34:48 | INFO     | agri_sens.ingestion.climate:climate_api.py:41 - Initialized NASADataPowerIngestionEngine with URL: https://power.larc.nasa.gov/api/temporal/daily/point
+2026-07-31 21:34:48 | INFO     | agri_sens.ingestion.stac:stac_client.py:64 - Initialized SentinelSTACIngestionEngine with catalog: https://planetarycomputer.microsoft.com/api/stac/v1
+2026-07-31 21:34:48 | INFO     | agri_sens.ingestion.stac:stac_client.py:64 - Initialized SentinelSTACIngestionEngine with catalog: https://planetarycomputer.microsoft.com/api/stac/v1
+2026-07-31 21:34:48 | INFO     | agri_sens.ingestion.stac:stac_client.py:64 - Initialized SentinelSTACIngestionEngine with catalog: https://planetarycomputer.microsoft.com/api/stac/v1
+2026-07-31 21:34:48 | INFO     | agri_sens.ingestion.stac:stac_client.py:111 - Searching STAC scenes: collection=sentinel-2-l2a, bbox=(36.8, -1.3, 37.0, -1.1), date_range=2023-01-01/2023-01-31, max_cloud=10.0%
+2026-07-31 21:34:48 | WARNING  | agri_sens.ingestion.stac:stac_client.py:148 - Found 1 scenes, but all exceed max cloud cover of 10.0%. Lowest cloud cover: 50.0%
+2026-07-31 21:34:48 | INFO     | agri_sens.ingestion.stac:stac_client.py:64 - Initialized SentinelSTACIngestionEngine with catalog: https://planetarycomputer.microsoft.com/api/stac/v1
+2026-07-31 21:34:48 | INFO     | agri_sens.ingestion.stac:stac_client.py:111 - Searching STAC scenes: collection=sentinel-2-l2a, bbox=(36.8, -1.3, 37.0, -1.1), date_range=2023-01-01/2023-01-31, max_cloud=10.0%
+2026-07-31 21:34:48 | ERROR    | agri_sens.ingestion.stac:stac_client.py:161 - No STAC scenes found for specified bbox and date range.
+2026-07-31 21:34:48 | INFO     | agri_sens.ingestion.stac:stac_client.py:64 - Initialized SentinelSTACIngestionEngine with catalog: https://planetarycomputer.microsoft.com/api/stac/v1
+2026-07-31 21:34:48 | INFO     | agri_sens.ingestion.stac:stac_client.py:111 - Searching STAC scenes: collection=sentinel-2-l2a, bbox=(36.8, -1.3, 37.0, -1.1), date_range=2023-01-01/2023-01-31, max_cloud=10.0%
+2026-07-31 21:34:48 | INFO     | agri_sens.ingestion.stac:stac_client.py:167 - Successfully retrieved 1 STAC scenes matching criteria.
+2026-07-31 21:34:48 | INFO     | agri_sens.preprocessing.reproject:reproject.py:51 - Aligning spatial grid to target_crs='EPSG:4326', resolution=0.0001
+2026-07-31 21:35:12 | INFO     | agri_sens.analytics.anomalies:anomalies.py:43 - Computing weekly Z-scores for climate variables (sm_col='GWETTOP', lst_col='TS_C')
+2026-07-31 21:35:12 | INFO     | agri_sens.analytics.anomalies:anomalies.py:104 - Successfully computed weekly climate Z-scores and risk flags.
+2026-07-31 21:35:12 | INFO     | agri_sens.analytics.anomalies:anomalies.py:43 - Computing weekly Z-scores for climate variables (sm_col='GWETTOP', lst_col='TS_C')
+2026-07-31 21:35:12 | ERROR    | agri_sens.analytics.anomalies:anomalies.py:46 - Input DataFrame index is not a DatetimeIndex.
+2026-07-31 21:35:12 | INFO     | agri_sens.analytics.anomalies:anomalies.py:43 - Computing weekly Z-scores for climate variables (sm_col='GWETTOP', lst_col='TS_C')
+2026-07-31 21:35:12 | INFO     | agri_sens.analytics.anomalies:anomalies.py:104 - Successfully computed weekly climate Z-scores and risk flags.
+2026-07-31 21:35:12 | INFO     | agri_sens.analytics.risk_engine:risk_engine.py:108 - Calculated CARI score: 17.91 -> Tier: 'NOMINAL'
+2026-07-31 21:35:12 | INFO     | agri_sens.analytics.risk_engine:risk_engine.py:108 - Calculated CARI score: 50.0 -> Tier: 'MODERATE STRESS'
+2026-07-31 21:35:12 | INFO     | agri_sens.analytics.risk_engine:risk_engine.py:108 - Calculated CARI score: 95.78 -> Tier: 'CRITICAL RISK'
+2026-07-31 21:35:12 | INFO     | agri_sens.analytics.risk_engine:risk_engine.py:108 - Calculated CARI score: 17.91 -> Tier: 'NOMINAL'
+2026-07-31 21:35:12 | INFO     | agri_sens:logger.py:118 - Module info test message
+2026-07-31 21:35:12 | WARNING  | agri_sens:logger.py:123 - Module warning test message
+2026-07-31 21:35:12 | ERROR    | agri_sens:logger.py:128 - Module error test message
+2026-07-31 21:35:12 | CRITICAL | agri_sens:logger.py:138 - Module critical test message
+2026-07-31 21:35:12 | INFO     | agri_sens.ingestion.climate:climate_api.py:41 - Initialized NASADataPowerIngestionEngine with URL: https://power.larc.nasa.gov/api/temporal/daily/point
+2026-07-31 21:35:12 | INFO     | agri_sens.ingestion.climate:climate_api.py:41 - Initialized NASADataPowerIngestionEngine with URL: https://power.larc.nasa.gov/api/temporal/daily/point
+2026-07-31 21:35:12 | INFO     | agri_sens.ingestion.climate:climate_api.py:103 - Querying NASA POWER API for lat=-1.28, lon=36.82, period=20230101-20230105
+2026-07-31 21:35:12 | ERROR    | agri_sens.ingestion.climate:climate_api.py:119 - HTTP request error while accessing NASA POWER API: 500 Server Error
+2026-07-31 21:35:12 | INFO     | agri_sens.ingestion.climate:climate_api.py:41 - Initialized NASADataPowerIngestionEngine with URL: https://power.larc.nasa.gov/api/temporal/daily/point
+2026-07-31 21:35:12 | INFO     | agri_sens.ingestion.climate:climate_api.py:103 - Querying NASA POWER API for lat=-1.28, lon=36.82, period=20230101-20230105
+2026-07-31 21:35:12 | INFO     | agri_sens.ingestion.climate:climate_api.py:184 - Converting Land Surface Temperature (TS) from Kelvin to Celsius.
+2026-07-31 21:35:12 | INFO     | agri_sens.ingestion.climate:climate_api.py:192 - Successfully parsed NASA POWER data (2 daily records).
+2026-07-31 21:35:12 | INFO     | agri_sens.ingestion.climate:climate_api.py:41 - Initialized NASADataPowerIngestionEngine with URL: https://power.larc.nasa.gov/api/temporal/daily/point
+2026-07-31 21:35:12 | INFO     | agri_sens.ingestion.stac:stac_client.py:64 - Initialized SentinelSTACIngestionEngine with catalog: https://planetarycomputer.microsoft.com/api/stac/v1
+2026-07-31 21:35:12 | INFO     | agri_sens.ingestion.stac:stac_client.py:64 - Initialized SentinelSTACIngestionEngine with catalog: https://planetarycomputer.microsoft.com/api/stac/v1
+2026-07-31 21:35:12 | INFO     | agri_sens.ingestion.stac:stac_client.py:64 - Initialized SentinelSTACIngestionEngine with catalog: https://planetarycomputer.microsoft.com/api/stac/v1
+2026-07-31 21:35:12 | INFO     | agri_sens.ingestion.stac:stac_client.py:111 - Searching STAC scenes: collection=sentinel-2-l2a, bbox=(36.8, -1.3, 37.0, -1.1), date_range=2023-01-01/2023-01-31, max_cloud=10.0%
+2026-07-31 21:35:12 | WARNING  | agri_sens.ingestion.stac:stac_client.py:148 - Found 1 scenes, but all exceed max cloud cover of 10.0%. Lowest cloud cover: 50.0%
+2026-07-31 21:35:12 | INFO     | agri_sens.ingestion.stac:stac_client.py:64 - Initialized SentinelSTACIngestionEngine with catalog: https://planetarycomputer.microsoft.com/api/stac/v1
+2026-07-31 21:35:12 | INFO     | agri_sens.ingestion.stac:stac_client.py:111 - Searching STAC scenes: collection=sentinel-2-l2a, bbox=(36.8, -1.3, 37.0, -1.1), date_range=2023-01-01/2023-01-31, max_cloud=10.0%
+2026-07-31 21:35:12 | ERROR    | agri_sens.ingestion.stac:stac_client.py:161 - No STAC scenes found for specified bbox and date range.
+2026-07-31 21:35:12 | INFO     | agri_sens.ingestion.stac:stac_client.py:64 - Initialized SentinelSTACIngestionEngine with catalog: https://planetarycomputer.microsoft.com/api/stac/v1
+2026-07-31 21:35:12 | INFO     | agri_sens.ingestion.stac:stac_client.py:111 - Searching STAC scenes: collection=sentinel-2-l2a, bbox=(36.8, -1.3, 37.0, -1.1), date_range=2023-01-01/2023-01-31, max_cloud=10.0%
+2026-07-31 21:35:12 | INFO     | agri_sens.ingestion.stac:stac_client.py:167 - Successfully retrieved 1 STAC scenes matching criteria.
+2026-07-31 21:35:12 | INFO     | agri_sens.preprocessing.reproject:reproject.py:51 - Aligning spatial grid to target_crs='EPSG:4326', resolution=0.0001
+2026-07-31 21:35:23 | INFO     | agri_sens.analytics.anomalies:anomalies.py:43 - Computing weekly Z-scores for climate variables (sm_col='GWETTOP', lst_col='TS_C')
+2026-07-31 21:35:23 | INFO     | agri_sens.analytics.anomalies:anomalies.py:104 - Successfully computed weekly climate Z-scores and risk flags.
+2026-07-31 21:35:23 | INFO     | agri_sens.analytics.anomalies:anomalies.py:43 - Computing weekly Z-scores for climate variables (sm_col='GWETTOP', lst_col='TS_C')
+2026-07-31 21:35:23 | ERROR    | agri_sens.analytics.anomalies:anomalies.py:46 - Input DataFrame index is not a DatetimeIndex.
+2026-07-31 21:35:23 | INFO     | agri_sens.analytics.anomalies:anomalies.py:43 - Computing weekly Z-scores for climate variables (sm_col='GWETTOP', lst_col='TS_C')
+2026-07-31 21:35:23 | INFO     | agri_sens.analytics.anomalies:anomalies.py:104 - Successfully computed weekly climate Z-scores and risk flags.
+2026-07-31 21:35:23 | INFO     | agri_sens.analytics.risk_engine:risk_engine.py:108 - Calculated CARI score: 17.91 -> Tier: 'NOMINAL'
+2026-07-31 21:35:23 | INFO     | agri_sens.analytics.risk_engine:risk_engine.py:108 - Calculated CARI score: 50.0 -> Tier: 'MODERATE STRESS'
+2026-07-31 21:35:23 | INFO     | agri_sens.analytics.risk_engine:risk_engine.py:108 - Calculated CARI score: 95.78 -> Tier: 'CRITICAL RISK'
+2026-07-31 21:35:23 | INFO     | agri_sens.analytics.risk_engine:risk_engine.py:108 - Calculated CARI score: 17.91 -> Tier: 'NOMINAL'
+2026-07-31 21:35:23 | INFO     | agri_sens.analytics.anomalies:anomalies.py:43 - Computing weekly Z-scores for climate variables (sm_col='GWETTOP', lst_col='TS_C')
+2026-07-31 21:35:23 | INFO     | agri_sens.analytics.anomalies:anomalies.py:104 - Successfully computed weekly climate Z-scores and risk flags.
+2026-07-31 21:35:23 | INFO     | agri_sens:logger.py:118 - Module info test message
+2026-07-31 21:35:23 | WARNING  | agri_sens:logger.py:123 - Module warning test message
+2026-07-31 21:35:23 | ERROR    | agri_sens:logger.py:128 - Module error test message
+2026-07-31 21:35:23 | CRITICAL | agri_sens:logger.py:138 - Module critical test message
+2026-07-31 21:35:23 | INFO     | agri_sens.ingestion.climate:climate_api.py:41 - Initialized NASADataPowerIngestionEngine with URL: https://power.larc.nasa.gov/api/temporal/daily/point
+2026-07-31 21:35:23 | INFO     | agri_sens.ingestion.climate:climate_api.py:41 - Initialized NASADataPowerIngestionEngine with URL: https://power.larc.nasa.gov/api/temporal/daily/point
+2026-07-31 21:35:23 | INFO     | agri_sens.ingestion.climate:climate_api.py:103 - Querying NASA POWER API for lat=-1.28, lon=36.82, period=20230101-20230105
+2026-07-31 21:35:23 | ERROR    | agri_sens.ingestion.climate:climate_api.py:119 - HTTP request error while accessing NASA POWER API: 500 Server Error
+2026-07-31 21:35:23 | INFO     | agri_sens.ingestion.climate:climate_api.py:41 - Initialized NASADataPowerIngestionEngine with URL: https://power.larc.nasa.gov/api/temporal/daily/point
+2026-07-31 21:35:23 | INFO     | agri_sens.ingestion.climate:climate_api.py:103 - Querying NASA POWER API for lat=-1.28, lon=36.82, period=20230101-20230105
+2026-07-31 21:35:23 | INFO     | agri_sens.ingestion.climate:climate_api.py:184 - Converting Land Surface Temperature (TS) from Kelvin to Celsius.
+2026-07-31 21:35:23 | INFO     | agri_sens.ingestion.climate:climate_api.py:192 - Successfully parsed NASA POWER data (2 daily records).
+2026-07-31 21:35:23 | INFO     | agri_sens.ingestion.climate:climate_api.py:41 - Initialized NASADataPowerIngestionEngine with URL: https://power.larc.nasa.gov/api/temporal/daily/point
+2026-07-31 21:35:23 | INFO     | agri_sens.ingestion.stac:stac_client.py:64 - Initialized SentinelSTACIngestionEngine with catalog: https://planetarycomputer.microsoft.com/api/stac/v1
+2026-07-31 21:35:23 | INFO     | agri_sens.ingestion.stac:stac_client.py:64 - Initialized SentinelSTACIngestionEngine with catalog: https://planetarycomputer.microsoft.com/api/stac/v1
+2026-07-31 21:35:23 | INFO     | agri_sens.ingestion.stac:stac_client.py:64 - Initialized SentinelSTACIngestionEngine with catalog: https://planetarycomputer.microsoft.com/api/stac/v1
+2026-07-31 21:35:23 | INFO     | agri_sens.ingestion.stac:stac_client.py:111 - Searching STAC scenes: collection=sentinel-2-l2a, bbox=(36.8, -1.3, 37.0, -1.1), date_range=2023-01-01/2023-01-31, max_cloud=10.0%
+2026-07-31 21:35:23 | WARNING  | agri_sens.ingestion.stac:stac_client.py:148 - Found 1 scenes, but all exceed max cloud cover of 10.0%. Lowest cloud cover: 50.0%
+2026-07-31 21:35:23 | INFO     | agri_sens.ingestion.stac:stac_client.py:64 - Initialized SentinelSTACIngestionEngine with catalog: https://planetarycomputer.microsoft.com/api/stac/v1
+2026-07-31 21:35:23 | INFO     | agri_sens.ingestion.stac:stac_client.py:111 - Searching STAC scenes: collection=sentinel-2-l2a, bbox=(36.8, -1.3, 37.0, -1.1), date_range=2023-01-01/2023-01-31, max_cloud=10.0%
+2026-07-31 21:35:23 | ERROR    | agri_sens.ingestion.stac:stac_client.py:161 - No STAC scenes found for specified bbox and date range.
+2026-07-31 21:35:23 | INFO     | agri_sens.ingestion.stac:stac_client.py:64 - Initialized SentinelSTACIngestionEngine with catalog: https://planetarycomputer.microsoft.com/api/stac/v1
+2026-07-31 21:35:23 | INFO     | agri_sens.ingestion.stac:stac_client.py:111 - Searching STAC scenes: collection=sentinel-2-l2a, bbox=(36.8, -1.3, 37.0, -1.1), date_range=2023-01-01/2023-01-31, max_cloud=10.0%
+2026-07-31 21:35:23 | INFO     | agri_sens.ingestion.stac:stac_client.py:167 - Successfully retrieved 1 STAC scenes matching criteria.
+2026-07-31 21:35:23 | INFO     | agri_sens.preprocessing.reproject:reproject.py:51 - Aligning spatial grid to target_crs='EPSG:4326', resolution=0.0001
+2026-07-31 21:51:55 | INFO     | agri_sens.analytics.anomalies:anomalies.py:43 - Computing weekly Z-scores for climate variables (sm_col='GWETTOP', lst_col='TS_C')
+2026-07-31 21:51:55 | INFO     | agri_sens.analytics.anomalies:anomalies.py:104 - Successfully computed weekly climate Z-scores and risk flags.
+2026-07-31 21:51:55 | INFO     | agri_sens.analytics.anomalies:anomalies.py:43 - Computing weekly Z-scores for climate variables (sm_col='GWETTOP', lst_col='TS_C')
+2026-07-31 21:51:55 | ERROR    | agri_sens.analytics.anomalies:anomalies.py:46 - Input DataFrame index is not a DatetimeIndex.
+2026-07-31 21:51:55 | INFO     | agri_sens.analytics.anomalies:anomalies.py:43 - Computing weekly Z-scores for climate variables (sm_col='GWETTOP', lst_col='TS_C')
+2026-07-31 21:51:55 | INFO     | agri_sens.analytics.anomalies:anomalies.py:104 - Successfully computed weekly climate Z-scores and risk flags.
+2026-07-31 21:51:55 | INFO     | agri_sens.analytics.risk_engine:risk_engine.py:108 - Calculated CARI score: 17.91 -> Tier: 'NOMINAL'
+2026-07-31 21:51:55 | INFO     | agri_sens.analytics.risk_engine:risk_engine.py:108 - Calculated CARI score: 50.0 -> Tier: 'MODERATE STRESS'
+2026-07-31 21:51:55 | INFO     | agri_sens.analytics.risk_engine:risk_engine.py:108 - Calculated CARI score: 95.78 -> Tier: 'CRITICAL RISK'
+2026-07-31 21:51:55 | INFO     | agri_sens.analytics.risk_engine:risk_engine.py:108 - Calculated CARI score: 17.91 -> Tier: 'NOMINAL'
+2026-07-31 21:51:55 | INFO     | agri_sens.analytics.anomalies:anomalies.py:43 - Computing weekly Z-scores for climate variables (sm_col='GWETTOP', lst_col='TS_C')
+2026-07-31 21:51:55 | INFO     | agri_sens.analytics.anomalies:anomalies.py:104 - Successfully computed weekly climate Z-scores and risk flags.
+2026-07-31 21:51:55 | INFO     | agri_sens:logger.py:118 - Module info test message
+2026-07-31 21:51:55 | WARNING  | agri_sens:logger.py:123 - Module warning test message
+2026-07-31 21:51:55 | ERROR    | agri_sens:logger.py:128 - Module error test message
+2026-07-31 21:51:55 | CRITICAL | agri_sens:logger.py:138 - Module critical test message
+2026-07-31 21:51:55 | INFO     | agri_sens.ingestion.climate:climate_api.py:41 - Initialized NASADataPowerIngestionEngine with URL: https://power.larc.nasa.gov/api/temporal/daily/point
+2026-07-31 21:51:55 | INFO     | agri_sens.ingestion.climate:climate_api.py:41 - Initialized NASADataPowerIngestionEngine with URL: https://power.larc.nasa.gov/api/temporal/daily/point
+2026-07-31 21:51:55 | INFO     | agri_sens.ingestion.climate:climate_api.py:103 - Querying NASA POWER API for lat=-1.28, lon=36.82, period=20230101-20230105
+2026-07-31 21:51:55 | ERROR    | agri_sens.ingestion.climate:climate_api.py:119 - HTTP request error while accessing NASA POWER API: 500 Server Error
+2026-07-31 21:51:55 | INFO     | agri_sens.ingestion.climate:climate_api.py:41 - Initialized NASADataPowerIngestionEngine with URL: https://power.larc.nasa.gov/api/temporal/daily/point
+2026-07-31 21:51:55 | INFO     | agri_sens.ingestion.climate:climate_api.py:103 - Querying NASA POWER API for lat=-1.28, lon=36.82, period=20230101-20230105
+2026-07-31 21:51:55 | INFO     | agri_sens.ingestion.climate:climate_api.py:184 - Converting Land Surface Temperature (TS) from Kelvin to Celsius.
+2026-07-31 21:51:55 | INFO     | agri_sens.ingestion.climate:climate_api.py:192 - Successfully parsed NASA POWER data (2 daily records).
+2026-07-31 21:51:55 | INFO     | agri_sens.ingestion.climate:climate_api.py:41 - Initialized NASADataPowerIngestionEngine with URL: https://power.larc.nasa.gov/api/temporal/daily/point
+2026-07-31 21:51:55 | INFO     | agri_sens.ingestion.stac:stac_client.py:64 - Initialized SentinelSTACIngestionEngine with catalog: https://planetarycomputer.microsoft.com/api/stac/v1
+2026-07-31 21:51:55 | INFO     | agri_sens.ingestion.stac:stac_client.py:64 - Initialized SentinelSTACIngestionEngine with catalog: https://planetarycomputer.microsoft.com/api/stac/v1
+2026-07-31 21:51:55 | INFO     | agri_sens.ingestion.stac:stac_client.py:64 - Initialized SentinelSTACIngestionEngine with catalog: https://planetarycomputer.microsoft.com/api/stac/v1
+2026-07-31 21:51:55 | INFO     | agri_sens.ingestion.stac:stac_client.py:111 - Searching STAC scenes: collection=sentinel-2-l2a, bbox=(36.8, -1.3, 37.0, -1.1), date_range=2023-01-01/2023-01-31, max_cloud=10.0%
+2026-07-31 21:51:55 | WARNING  | agri_sens.ingestion.stac:stac_client.py:148 - Found 1 scenes, but all exceed max cloud cover of 10.0%. Lowest cloud cover: 50.0%
+2026-07-31 21:51:55 | INFO     | agri_sens.ingestion.stac:stac_client.py:64 - Initialized SentinelSTACIngestionEngine with catalog: https://planetarycomputer.microsoft.com/api/stac/v1
+2026-07-31 21:51:55 | INFO     | agri_sens.ingestion.stac:stac_client.py:111 - Searching STAC scenes: collection=sentinel-2-l2a, bbox=(36.8, -1.3, 37.0, -1.1), date_range=2023-01-01/2023-01-31, max_cloud=10.0%
+2026-07-31 21:51:55 | ERROR    | agri_sens.ingestion.stac:stac_client.py:161 - No STAC scenes found for specified bbox and date range.
+2026-07-31 21:51:55 | INFO     | agri_sens.ingestion.stac:stac_client.py:64 - Initialized SentinelSTACIngestionEngine with catalog: https://planetarycomputer.microsoft.com/api/stac/v1
+2026-07-31 21:51:55 | INFO     | agri_sens.ingestion.stac:stac_client.py:111 - Searching STAC scenes: collection=sentinel-2-l2a, bbox=(36.8, -1.3, 37.0, -1.1), date_range=2023-01-01/2023-01-31, max_cloud=10.0%
+2026-07-31 21:51:55 | INFO     | agri_sens.ingestion.stac:stac_client.py:167 - Successfully retrieved 1 STAC scenes matching criteria.
+2026-07-31 21:51:55 | INFO     | agri_sens.preprocessing.reproject:reproject.py:51 - Aligning spatial grid to target_crs='EPSG:4326', resolution=0.0001
+2026-07-31 21:57:29 | INFO     | agri_sens.analytics.anomalies:anomalies.py:43 - Computing weekly Z-scores for climate variables (sm_col='GWETTOP', lst_col='TS_C')
+2026-07-31 21:57:29 | INFO     | agri_sens.analytics.anomalies:anomalies.py:104 - Successfully computed weekly climate Z-scores and risk flags.
+2026-07-31 21:57:29 | INFO     | agri_sens.analytics.risk_engine:risk_engine.py:108 - Calculated CARI score: 56.47 -> Tier: 'HIGH RISK'
+2026-07-31 21:57:36 | INFO     | agri_sens.analytics.risk_engine:risk_engine.py:108 - Calculated CARI score: 56.47 -> Tier: 'HIGH RISK'
+2026-07-31 21:58:00 | INFO     | agri_sens.analytics.anomalies:anomalies.py:43 - Computing weekly Z-scores for climate variables (sm_col='GWETTOP', lst_col='TS_C')
+2026-07-31 21:58:00 | INFO     | agri_sens.analytics.anomalies:anomalies.py:104 - Successfully computed weekly climate Z-scores and risk flags.
+2026-07-31 21:58:00 | INFO     | agri_sens.analytics.risk_engine:risk_engine.py:108 - Calculated CARI score: 63.44 -> Tier: 'HIGH RISK'
+2026-07-31 21:58:01 | INFO     | agri_sens.analytics.risk_engine:risk_engine.py:108 - Calculated CARI score: 63.44 -> Tier: 'HIGH RISK'
+2026-07-31 21:58:05 | INFO     | agri_sens.analytics.anomalies:anomalies.py:43 - Computing weekly Z-scores for climate variables (sm_col='GWETTOP', lst_col='TS_C')
+2026-07-31 21:58:05 | INFO     | agri_sens.analytics.anomalies:anomalies.py:104 - Successfully computed weekly climate Z-scores and risk flags.
+2026-07-31 21:58:05 | INFO     | agri_sens.analytics.risk_engine:risk_engine.py:108 - Calculated CARI score: 63.44 -> Tier: 'HIGH RISK'
+2026-07-31 21:58:09 | INFO     | agri_sens.analytics.anomalies:anomalies.py:43 - Computing weekly Z-scores for climate variables (sm_col='GWETTOP', lst_col='TS_C')
+2026-07-31 21:58:10 | INFO     | agri_sens.analytics.anomalies:anomalies.py:104 - Successfully computed weekly climate Z-scores and risk flags.
+2026-07-31 21:58:10 | INFO     | agri_sens.analytics.risk_engine:risk_engine.py:108 - Calculated CARI score: 63.44 -> Tier: 'HIGH RISK'
+2026-07-31 21:58:12 | INFO     | agri_sens.analytics.risk_engine:risk_engine.py:108 - Calculated CARI score: 63.44 -> Tier: 'HIGH RISK'
+2026-07-31 22:06:02 | INFO     | agri_sens.analytics.anomalies:anomalies.py:43 - Computing weekly Z-scores for climate variables (sm_col='GWETTOP', lst_col='TS_C')
+2026-07-31 22:06:02 | INFO     | agri_sens.analytics.anomalies:anomalies.py:104 - Successfully computed weekly climate Z-scores and risk flags.
+2026-07-31 22:06:02 | INFO     | agri_sens.analytics.risk_engine:risk_engine.py:108 - Calculated CARI score: 56.47 -> Tier: 'HIGH RISK'
+2026-07-31 22:06:03 | INFO     | agri_sens.analytics.risk_engine:risk_engine.py:108 - Calculated CARI score: 56.47 -> Tier: 'HIGH RISK'
+2026-07-31 22:06:10 | INFO     | agri_sens.analytics.risk_engine:risk_engine.py:108 - Calculated CARI score: 56.47 -> Tier: 'HIGH RISK'

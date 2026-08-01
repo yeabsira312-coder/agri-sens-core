@@ -35,12 +35,22 @@ from app.views.tab_export import render_export_tab
 from app.views.tab_map import render_map_tab
 from app.views.tab_mission import render_mission_tab
 
-# AOI Presets
+# Updated Presets: Comprehensive coverage for Ethiopia and surrounding African agricultural belts
 AOI_PRESETS = {
-    "Rift Valley (Nakuru Wheat Zone)": {"lat": -0.30, "lon": 36.07},
-    "Machakos Agro-Pastoral Region": {"lat": -1.52, "lon": 37.26},
-    "Uasin Gishu Grain Belt": {"lat": 0.52, "lon": 35.28},
-    "Custom Location": {"lat": -1.28, "lon": 36.82},
+    "Oromia (Arsi / Bale Wheat Belt)": {"lat": 7.00, "lon": 39.00},
+    "Oromia (Jimma Coffee Belt)": {"lat": 7.67, "lon": 36.83},
+    "Amhara (Gondar / Gojjam Grain Belt)": {"lat": 11.60, "lon": 37.36},
+    "SNNPR / South Ethiopia (Sidama Coffee Zone)": {"lat": 6.83, "lon": 38.38},
+    "Tigray (Central Agricultural Zone)": {"lat": 13.80, "lon": 38.90},
+    "Somali Region (Jijiga Agro-Pastoral)": {"lat": 9.35, "lon": 42.80},
+    "Afar Region (Awash Valley Irrigation)": {"lat": 9.50, "lon": 40.50},
+    "Gambela Region (Lowland Agriculture)": {"lat": 8.25, "lon": 34.58},
+    "Benishangul-Gumuz (Asosa Zone)": {"lat": 10.06, "lon": 34.53},
+    "Harari / Dire Dawa Farming Zone": {"lat": 9.31, "lon": 42.13},
+    "East Africa: Kenya (Rift Valley)": {"lat": -0.30, "lon": 36.07},
+    "East Africa: Uganda (Central Maize & Coffee Zone)": {"lat": 0.31, "lon": 32.58},
+    "East Africa: Sudan (Gezira Agricultural Scheme)": {"lat": 14.40, "lon": 33.50},
+    "Custom Coordinates": {"lat": 9.03, "lon": 38.74},  # Default: Addis Ababa
 }
 
 

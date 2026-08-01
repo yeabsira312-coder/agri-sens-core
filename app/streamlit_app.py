@@ -31,30 +31,43 @@ if css_path.exists():
 # --- PWA MANIFEST & SERVICE WORKER INJECTION ---
 pwa_code = """
 <script>
+  // 1. Inject Manifest if not already present
   if (!document.querySelector('link[rel="manifest"]')) {
     const manifest = {
-      "short_name": "AgriSens",
       "name": "AgriSens Core",
+      "short_name": "AgriSens",
+      "description": "Real-time satellite climate risk and agricultural analytics platform for crop monitoring and yield optimization.",
+      "start_url": "/",
+      "scope": "/",
+      "id": "com.agrisens.core",
+      "display": "standalone",
+      "display_override": ["standalone", "browser"],
+      "orientation": "portrait-primary",
+      "background_color": "#0D1117",
+      "theme_color": "#10B981",
+      "lang": "en",
+      "dir": "ltr",
+      "categories": ["agriculture", "productivity", "utilities"],
       "icons": [
         {
-          "src": "https://raw.githubusercontent.com/YabSam/agri_sens_core/main/app/assets/logo.png",
+          "src": "https://img.icons8.com/color/192/000000/sprout.png",
+          "sizes": "192x192",
+          "type": "image/png",
+          "purpose": "any maskable"
+        },
+        {
+          "src": "https://img.icons8.com/color/512/000000/sprout.png",
           "sizes": "512x512",
           "type": "image/png",
           "purpose": "any maskable"
         }
       ],
-      "start_url": "https://agri-sens-core-a9i3qe95mgeay8hk69znxv.streamlit.app/",
-      "display": "standalone",
-      "theme_color": "#ffffff",
-      "background_color": "#ffffff",
-      "description": "Real-time satellite climate risk and agricultural analytics platform for crop monitoring and yield optimization in Ethiopia.",
-      "id": "com.agrisens.core",
-      "scope": "/",
-      "orientation": "portrait",
-      "lang": "en",
-      "categories": [
-        "productivity",
-        "utilities"
+      "shortcuts": [
+        {
+          "name": "Dashboard",
+          "url": "/",
+          "description": "Open Climate Dashboard"
+        }
       ]
     };
 
@@ -68,6 +81,7 @@ pwa_code = """
     document.getElementsByTagName('head')[0].appendChild(link);
   }
 
+  // 2. Register Service Worker
   if ('serviceWorker' in navigator) {
     const swCode = `
       self.addEventListener('install', (e) => { self.skipWaiting(); });
@@ -84,8 +98,8 @@ pwa_code = """
 </script>
 """
 
+# Render hidden PWA controller
 components.html(pwa_code, height=0, width=0)
-
 
 
 # 4. Import internal modules safely
@@ -96,6 +110,30 @@ from app.views.tab_analytics import render_analytics_tab
 from app.views.tab_export import render_export_tab
 from app.views.tab_map import render_map_tab
 from app.views.tab_mission import render_mission_tab
+
+# --- RECOMMENDATION ENGINE LOOKUP TABLE ---
+# Maps risk tiers dynamically to actionable agricultural interventions
+RECOMMENDATIONS = {
+    "High Risk": (
+        "🚨 **Critical Action Required:** High crop stress detected! "
+        "Increase irrigation cycles immediately during early morning/evening to reduce evaporation. "
+        "Apply organic mulch around root zones to retain soil moisture and inspect fields for emerging pests."
+    ),
+    "Moderate Risk": (
+        "⚠️ **Cautionary Interventions:** Moderate vegetation stress observed. "
+        "Monitor soil moisture levels closely over the next 5-7 days. "
+        "Consider micro-dosing nitrogen-based fertilizers if leaf yellowing (low NDVI) persists."
+    ),
+    "Low Risk": (
+        "✅ **Optimal Conditions:** Crops are within healthy baseline parameters. "
+        "Continue standard crop rotation, weeding, and routine field management procedures."
+    ),
+    "Extreme Risk": (
+        "🆘 **Emergency Mitigation:** Severe drought/heat stress detected! "
+        "Activate emergency water supply lines, implement shade netting if feasible for high-value crops, "
+        "and contact local agricultural extension agents for emergency support."
+    ),
+}
 
 # Updated Presets: Comprehensive coverage for Ethiopia and surrounding African agricultural belts
 AOI_PRESETS = {
@@ -135,6 +173,9 @@ def run_cached_pipeline(
     s_date = start_date_str.replace("-", "")
     e_date = end_date_str.replace("-", "")
 
+    # Retrieve secure headers or user-agent from secrets if configured
+    user_agent = st.secrets.get("USER_AGENT", "Mozilla/5.0 (AgriSensCore/1.0)")
+
     # NASA POWER API Endpoint for Surface Temperature (TS) and Topsoil Wetness (GWETTOP)
     url = (
         f"https://power.larc.nasa.gov/api/temporal/daily/point?"
@@ -143,7 +184,7 @@ def run_cached_pipeline(
     )
 
     try:
-        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+        req = urllib.request.Request(url, headers={'User-Agent': user_agent})
         with urllib.request.urlopen(req, timeout=12) as response:
             data = json.loads(response.read().decode('utf-8'))
         
@@ -193,6 +234,16 @@ def run_cached_pipeline(
     return df
 
 
+def display_recommendation(risk_tier: str) -> None:
+    """Helper component to safely display high-priority recommendations."""
+    recommendation_text = RECOMMENDATIONS.get(
+        risk_tier, 
+        "ℹ️ **Status Normal:** Continue routine soil and crop monitoring."
+    )
+    st.markdown("### 💡 Recommended Agricultural Actions")
+    st.info(recommendation_text)
+
+
 def main() -> None:
     """Main Streamlit Application Controller."""
     st.sidebar.image(
@@ -209,12 +260,12 @@ def main() -> None:
     )
     default_coords = AOI_PRESETS[preset_choice]
 
-    # 2. Coordinate Inputs
+    # 2. Coordinate Inputs with Sanitization / Bound Enforcement
     center_lat = st.sidebar.number_input(
         "Center Latitude (°N)",
         min_value=-90.0,
         max_value=90.0,
-        value=default_coords["lat"],
+        value=float(default_coords["lat"]),
         step=0.01,
         format="%.4f",
     )
@@ -222,7 +273,7 @@ def main() -> None:
         "Center Longitude (°E)",
         min_value=-180.0,
         max_value=180.0,
-        value=default_coords["lon"],
+        value=float(default_coords["lon"]),
         step=0.01,
         format="%.4f",
     )
@@ -289,6 +340,9 @@ def main() -> None:
 
     with tab1:
         render_mission_tab()
+        st.markdown("---")
+        # Direct Actionable Solutions Block
+        display_recommendation(risk_tier)
 
     with tab2:
         render_map_tab(
@@ -301,6 +355,9 @@ def main() -> None:
             z_sm=z_sm,
             z_lst=z_lst,
         )
+        st.markdown("---")
+        # Direct Actionable Solutions Block on Map view
+        display_recommendation(risk_tier)
 
     with tab3:
         render_analytics_tab(df)

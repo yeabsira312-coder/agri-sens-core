@@ -31,43 +31,30 @@ if css_path.exists():
 # --- PWA MANIFEST & SERVICE WORKER INJECTION ---
 pwa_code = """
 <script>
-  // 1. Inject Manifest if not already present
   if (!document.querySelector('link[rel="manifest"]')) {
     const manifest = {
-      "name": "AgriSens Core",
       "short_name": "AgriSens",
-      "description": "Real-time satellite climate risk and agricultural analytics platform for crop monitoring and yield optimization.",
-      "start_url": "/",
-      "scope": "/",
-      "id": "com.agrisens.core",
-      "display": "standalone",
-      "display_override": ["standalone", "browser"],
-      "orientation": "portrait-primary",
-      "background_color": "#0D1117",
-      "theme_color": "#10B981",
-      "lang": "en",
-      "dir": "ltr",
-      "categories": ["agriculture", "productivity", "utilities"],
+      "name": "AgriSens Core",
       "icons": [
         {
-          "src": "https://img.icons8.com/color/192/000000/sprout.png",
-          "sizes": "192x192",
-          "type": "image/png",
-          "purpose": "any maskable"
-        },
-        {
-          "src": "https://img.icons8.com/color/512/000000/sprout.png",
+          "src": "https://raw.githubusercontent.com/YabSam/agri_sens_core/main/app/assets/logo.png",
           "sizes": "512x512",
           "type": "image/png",
           "purpose": "any maskable"
         }
       ],
-      "shortcuts": [
-        {
-          "name": "Dashboard",
-          "url": "/",
-          "description": "Open Climate Dashboard"
-        }
+      "start_url": "https://agri-sens-core-a9i3qe95mgeay8hk69znxv.streamlit.app/",
+      "display": "standalone",
+      "theme_color": "#ffffff",
+      "background_color": "#ffffff",
+      "description": "Real-time satellite climate risk and agricultural analytics platform for crop monitoring and yield optimization in Ethiopia.",
+      "id": "com.agrisens.core",
+      "scope": "/",
+      "orientation": "portrait",
+      "lang": "en",
+      "categories": [
+        "productivity",
+        "utilities"
       ]
     };
 
@@ -81,7 +68,6 @@ pwa_code = """
     document.getElementsByTagName('head')[0].appendChild(link);
   }
 
-  // 2. Register Service Worker
   if ('serviceWorker' in navigator) {
     const swCode = `
       self.addEventListener('install', (e) => { self.skipWaiting(); });
@@ -98,8 +84,8 @@ pwa_code = """
 </script>
 """
 
-# Render hidden PWA controller
 components.html(pwa_code, height=0, width=0)
+
 
 
 # 4. Import internal modules safely

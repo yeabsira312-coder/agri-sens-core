@@ -202,75 +202,144 @@ RECOMMENDATION_MATRIX = {
 }
 
 
-# --- GLOBAL HIERARCHICAL PRESETS (100+ COUNTRIES & AGRICULTURAL REGIONS) ---
+# --- GLOBAL HIERARCHICAL PRESETS (ALPHABETICAL COUNTRIES & REAL AGRICULTURAL REGIONS) ---
 GLOBAL_COUNTRY_AGRI_PRESETS = {
-    "Ethiopia": {
-        "Oromia (Arsi / Bale Wheat Belt)": {"lat": 7.00, "lon": 39.00},
-        "Oromia (Jimma Coffee Belt)": {"lat": 7.67, "lon": 36.83},
-        "Amhara (Gondar / Gojjam Grain Belt)": {"lat": 11.60, "lon": 37.36},
-        "SNNPR / Sidama (Coffee & Enset Zone)": {"lat": 6.83, "lon": 38.38},
-        "Tigray (Central Agricultural Zone)": {"lat": 13.80, "lon": 38.90},
-        "Somali Region (Jijiga Agro-Pastoral)": {"lat": 9.35, "lon": 42.80},
-        "Afar Region (Awash Valley Irrigation)": {"lat": 9.50, "lon": 40.50},
-        "Gambela Region (Lowland Agriculture)": {"lat": 8.25, "lon": 34.58},
-        "Benishangul-Gumuz (Asosa Zone)": {"lat": 10.06, "lon": 34.53},
-        "Harari / Dire Dawa Farming Zone": {"lat": 9.31, "lon": 42.13},
+    "Afghanistan": {
+        "Helmand River Basin": {"lat": 31.35, "lon": 64.30},
+        "Kunduz River Valley": {"lat": 36.72, "lon": 68.86},
+        "Harirud Valley": {"lat": 34.34, "lon": 62.20},
     },
-    "Kenya": {
-        "Rift Valley (Maize & Wheat Belt)": {"lat": -0.30, "lon": 36.07},
-        "Central Highlands (Tea & Coffee Zone)": {"lat": -0.42, "lon": 36.95},
-        "Western Region (Sugarcane Zone)": {"lat": 0.28, "lon": 34.75},
-        "Mwea Irrigation Scheme (Rice)": {"lat": -0.65, "lon": 37.35},
+    "Argentina": {
+        "Pampas Agricultural Belt": {"lat": -34.60, "lon": -58.38},
+        "Gran Chaco Cropland": {"lat": -26.80, "lon": -60.48},
+        "Mendoza Wine Valley": {"lat": -32.89, "lon": -68.84},
+        "Rio Negro Agricultural Valley": {"lat": -39.03, "lon": -67.58},
     },
-    "Nigeria": {
-        "Kano Plains (Grain & Groundnut Zone)": {"lat": 12.00, "lon": 8.52},
-        "Benue Valley (Food Basket - Yam & Maize)": {"lat": 7.73, "lon": 8.52},
-        "Kaduna Agricultural Belt": {"lat": 10.52, "lon": 7.44},
-        "Niger Delta Agricultural Basin": {"lat": 5.31, "lon": 6.47},
+    "Australia": {
+        "Murray-Darling Basin": {"lat": -34.00, "lon": 141.00},
+        "Wheatbelt Region WA": {"lat": -31.50, "lon": 117.00},
+        "Darling Downs": {"lat": -27.56, "lon": 151.78},
+        "Riverina Region": {"lat": -34.50, "lon": 146.00},
     },
-    "Egypt": {
-        "Nile Delta Agricultural Region": {"lat": 30.80, "lon": 31.00},
-        "Upper Egypt Valley (Sugar & Wheat)": {"lat": 26.15, "lon": 32.72},
-        "Fayoum Oasis Irrigation Zone": {"lat": 29.31, "lon": 30.84},
-    },
-    "South Africa": {
-        "Free State Grain Belt (Maize/Wheat)": {"lat": -28.45, "lon": 26.78},
-        "Western Cape (Vineyards & Fruit Orchards)": {"lat": -33.93, "lon": 18.86},
-        "KwaZulu-Natal Sugarcane Belt": {"lat": -29.60, "lon": 31.00},
-    },
-    "United States": {
-        "Midwest Corn & Soybean Belt (Iowa)": {"lat": 41.87, "lon": -93.09},
-        "Central Valley (California Orchards)": {"lat": 36.77, "lon": -119.41},
-        "Great Plains Wheat Belt (Kansas)": {"lat": 38.50, "lon": -98.00},
-        "Mississippi Delta Cotton & Rice Zone": {"lat": 33.50, "lon": -90.50},
+    "Bangladesh": {
+        "Ganges-Brahmaputra Delta": {"lat": 23.81, "lon": 90.41},
+        "Sylhet Basin": {"lat": 24.89, "lon": 91.86},
+        "Rangpur Agricultural Plains": {"lat": 25.74, "lon": 89.27},
     },
     "Brazil": {
-        "Mato Grosso (Soybean & Corn Belt)": {"lat": -12.64, "lon": -55.42},
-        "Paraná Agricultural Region": {"lat": -24.75, "lon": -51.81},
-        "São Paulo Sugar & Citrus Belt": {"lat": -21.79, "lon": -48.17},
-        "Cerrado Agricultural Belt": {"lat": -15.78, "lon": -47.92},
+        "Cerrado Agricultural Belt": {"lat": -12.68, "lon": -55.71},
+        "Mato Grosso Soybean Zone": {"lat": -13.00, "lon": -56.00},
+        "Parana Agricultural Region": {"lat": -24.00, "lon": -51.00},
+        "São Paulo Citrus & Cane Belt": {"lat": -22.00, "lon": -48.00},
+        "Rio Grande do Sul Rice Belt": {"lat": -30.00, "lon": -53.00},
     },
-    "India": {
-        "Punjab & Haryana (Granary - Wheat/Rice)": {"lat": 31.14, "lon": 75.34},
-        "Uttar Pradesh Gangetic Agricultural Plain": {"lat": 26.85, "lon": 80.94},
-        "Deccan Plateau (Cotton & Pulses Zone)": {"lat": 17.38, "lon": 78.48},
-        "Kaveri Delta (Rice Bowl of South India)": {"lat": 10.79, "lon": 79.13},
+    "Canada": {
+        "Saskatchewan Grain Belt": {"lat": 52.13, "lon": -106.67},
+        "Alberta Peace River Region": {"lat": 56.23, "lon": -117.28},
+        "Southern Manitoba Croplands": {"lat": 49.89, "lon": -97.13},
+        "Niagara Peninsula Belt": {"lat": 43.15, "lon": -79.24},
     },
     "China": {
-        "North China Plain (Wheat & Maize)": {"lat": 36.00, "lon": 116.00},
-        "Northeast Plain (Soybean & Paddy Rice)": {"lat": 45.00, "lon": 126.00},
-        "Sichuan Basin Intensive Farming Zone": {"lat": 30.65, "lon": 104.06},
-        "Yangtze River Basin Rice Belt": {"lat": 30.00, "lon": 115.00},
+        "North China Plain": {"lat": 36.50, "lon": 116.50},
+        "Northeast China Plain": {"lat": 45.00, "lon": 126.00},
+        "Sichuan Basin": {"lat": 30.50, "lon": 105.50},
+        "Middle-Lower Yangtze Plain": {"lat": 30.00, "lon": 115.00},
+        "Pearl River Delta": {"lat": 23.00, "lon": 113.50},
     },
-    "Ukraine": {
-        "Chernozem Central Wheat & Sunflower Belt": {"lat": 49.00, "lon": 32.00},
-        "Steppe Agricultural Zone (Grain)": {"lat": 46.97, "lon": 32.00},
-        "Polissya Agricultural Region": {"lat": 51.00, "lon": 28.50},
+    "Egypt": {
+        "Nile River Delta": {"lat": 30.80, "lon": 31.00},
+        "Faiyum Oasis": {"lat": 29.31, "lon": 30.84},
+        "Upper Nile Valley": {"lat": 25.68, "lon": 32.64},
+    },
+    "Ethiopia": {
+        "Arsi / Bale Wheat Belt (Oromia)": {"lat": 7.00, "lon": 39.00},
+        "Jimma Coffee Zone (Oromia)": {"lat": 7.67, "lon": 36.83},
+        "Gondar / Gojjam Grain Belt (Amhara)": {"lat": 11.60, "lon": 37.36},
+        "Sidama Coffee & Enset Zone": {"lat": 6.83, "lon": 38.38},
+        "Central Agricultural Zone (Tigray)": {"lat": 13.80, "lon": 38.90},
+        "Awash Valley Irrigation (Afar)": {"lat": 9.50, "lon": 40.50},
+        "Jijiga Agro-Pastoral Zone (Somali)": {"lat": 9.35, "lon": 42.80},
     },
     "France": {
-        "Bassin Parisien Wheat & Barley Belt": {"lat": 48.85, "lon": 2.35},
-        "Aquitaine Corn & Agricultural Basin": {"lat": 44.83, "lon": -0.57},
-        "Rhône Valley Orchards & Vineyards": {"lat": 45.00, "lon": 4.89},
+        "Paris Basin (Bassin Parisien)": {"lat": 48.85, "lon": 2.35},
+        "Aquitaine Agricultural Basin": {"lat": 44.83, "lon": -0.57},
+        "Rhône Valley Croplands": {"lat": 45.00, "lon": 4.89},
+    },
+    "Germany": {
+        "Magdeburg Börde Soil Zone": {"lat": 52.13, "lon": 11.61},
+        "Lower Rhine Bay Zone": {"lat": 51.00, "lon": 6.50},
+        "Bavarian Alpine Foreland": {"lat": 48.00, "lon": 11.50},
+    },
+    "India": {
+        "Indo-Gangetic Plain": {"lat": 28.61, "lon": 77.20},
+        "Punjab Agricultural Belt": {"lat": 30.90, "lon": 75.85},
+        "Deccan Plateau Croplands": {"lat": 17.38, "lon": 78.48},
+        "Kaveri River Delta": {"lat": 10.78, "lon": 79.13},
+        "Gujarat Cotton & Peanut Belt": {"lat": 22.30, "lon": 70.80},
+    },
+    "Indonesia": {
+        "Java Volcanic Agricultural Plains": {"lat": -7.50, "lon": 110.00},
+        "Sumatra Lowland Belt": {"lat": 0.50, "lon": 101.50},
+        "South Sulawesi Rice Belt": {"lat": -4.50, "lon": 119.80},
+    },
+    "Italy": {
+        "Po Valley Agricultural Plain": {"lat": 45.00, "lon": 10.00},
+        "Tuscan Agricultural Hills": {"lat": 43.40, "lon": 11.00},
+        "Puglia Agricultural Plain": {"lat": 41.00, "lon": 16.50},
+    },
+    "Kenya": {
+        "Rift Valley Highland Crops": {"lat": -0.30, "lon": 36.00},
+        "Central Highlands Belt": {"lat": -0.50, "lon": 37.00},
+        "Western Kenya Sugar Belt": {"lat": 0.10, "lon": 34.75},
+        "Mwea Irrigation Scheme": {"lat": -0.65, "lon": 37.35},
+    },
+    "Mexico": {
+        "El Bajío Agricultural Region": {"lat": 20.50, "lon": -101.00},
+        "Sinaloa Coastal Cropland": {"lat": 25.00, "lon": -108.00},
+        "Sonora Agricultural Valley": {"lat": 27.50, "lon": -110.00},
+    },
+    "Nigeria": {
+        "Niger-Benue Trough": {"lat": 7.80, "lon": 6.70},
+        "Kano Agricultural Plains": {"lat": 12.00, "lon": 8.50},
+        "Middle Belt Croplands": {"lat": 9.00, "lon": 7.00},
+        "Niger Delta Agricultural Basin": {"lat": 5.31, "lon": 6.47},
+    },
+    "Pakistan": {
+        "Indus River Basin": {"lat": 30.00, "lon": 71.00},
+        "Punjab Agricultural Plains": {"lat": 31.50, "lon": 73.00},
+        "Sindh Irrigated Belt": {"lat": 26.00, "lon": 68.50},
+    },
+    "Russia": {
+        "Black Earth (Chernozem) Belt": {"lat": 51.67, "lon": 39.18},
+        "Kuban Agricultural Region": {"lat": 45.03, "lon": 38.97},
+        "Volga Agricultural Basin": {"lat": 53.20, "lon": 50.15},
+    },
+    "South Africa": {
+        "Free State Grain Belt": {"lat": -28.00, "lon": 27.00},
+        "Western Cape Fruit & Wine Belt": {"lat": -33.92, "lon": 18.42},
+        "KwaZulu-Natal Sugar Belt": {"lat": -29.50, "lon": 31.00},
+    },
+    "Spain": {
+        "Andalusia Agricultural Plain": {"lat": 37.38, "lon": -5.98},
+        "Castile and León Grain Region": {"lat": 41.65, "lon": -4.72},
+        "Ebro River Valley": {"lat": 41.65, "lon": -0.88},
+    },
+    "Ukraine": {
+        "Central Chernozem Steppe": {"lat": 49.00, "lon": 31.00},
+        "Polissya Agricultural Zone": {"lat": 51.50, "lon": 28.50},
+        "Southern Steppe Croplands": {"lat": 46.50, "lon": 33.00},
+    },
+    "United States": {
+        "Midwest Corn & Soybean Belt": {"lat": 41.50, "lon": -93.50},
+        "California Central Valley": {"lat": 36.50, "lon": -119.80},
+        "Great Plains Winter Wheat Belt": {"lat": 38.50, "lon": -98.00},
+        "Mississippi River Delta": {"lat": 33.50, "lon": -90.50},
+        "Palouse Wheat Region": {"lat": 46.73, "lon": -117.18},
+    },
+    "Vietnam": {
+        "Mekong River Delta": {"lat": 10.03, "lon": 105.78},
+        "Red River Delta": {"lat": 20.85, "lon": 106.68},
+        "Central Highlands Coffee Zone": {"lat": 12.67, "lon": 108.05},
     },
     "Custom Selection": {
         "Custom Coordinates (Worldwide)": {"lat": 9.03, "lon": 38.74},
@@ -422,7 +491,7 @@ def main() -> None:
     selected_country = st.sidebar.selectbox(
         "1. Select Country",
         country_list,
-        index=0,  # Defaults to Ethiopia
+        index=0,
     )
 
     # Step 2: Agricultural Belt Dropdown (Filtered by selected country)

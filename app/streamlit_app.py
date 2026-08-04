@@ -366,7 +366,10 @@ def run_cached_pipeline(
     s_date = str(start_date_str).replace("-", "")
     e_date = str(end_date_str).replace("-", "")
 
-    user_agent = st.secrets.get("USER_AGENT", "Mozilla/5.0 (AgriSensCore/1.0)")
+    try:
+        user_agent = st.secrets.get("USER_AGENT", "Mozilla/5.0 (AgriSensCore/1.0)")
+    except Exception:
+        user_agent = "Mozilla/5.0 (AgriSensCore/1.0)"
 
     url = (
         f"https://power.larc.nasa.gov/api/temporal/daily/point?"

@@ -226,7 +226,7 @@ class SentinelSTACIngestionEngine:
 
             for item in item_list:
                 dt_str = item.properties.get("datetime", item.id)
-                dates.append(np.datetime64(dt_str))
+                dates.append(pd.to_datetime(dt_str).tz_localize(None))
 
             for band in bands:
                 band_urls = []

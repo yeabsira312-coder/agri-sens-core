@@ -1,10 +1,11 @@
-# Python
+# Python bytecode
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
 .Python
-env/
+
+# Build / distribution
 build/
 develop-eggs/
 dist/
@@ -21,32 +22,43 @@ wheels/
 .installed.cfg
 *.egg
 
-# Virtual Environment
+# Virtual environments
 venv/
 ENV/
+env/
 env.bak/
 venv.bak/
 
-# Logs
+# Logs — ignore all log files and dated log rotations
 logs/*.log
+logs/*.log.*
 *.log
 
-# Data
+# Data — ignore contents but preserve directory structure via .gitkeep
 data/raw/*
 data/interim/*
 data/processed/*
 data/external/*
 !data/**/.gitkeep
 
+# Environment secrets
+.env
+# .env.example is committed intentionally — do not ignore it
+
 # IDEs
 .vscode/
 .idea/
 *.swp
+*.swo
 
-# Testing & Coverage
+# Testing & coverage
 .pytest_cache/
 .coverage
 htmlcov/
+coverage.xml
 
-# Environment Variables
-.env
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db

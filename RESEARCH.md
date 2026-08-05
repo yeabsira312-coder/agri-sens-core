@@ -1,35 +1,53 @@
-# Research Overview
+# AgriSens Core — Technical Research & Methodological Overview
 
-## Executive Summary
-Short‑term thermal spikes—periods where land‑surface temperature rises 2–3 standard deviations above the 30‑year historical mean for 48–72 hours—can induce acute crop stress, especially during phenological stages such as flowering or grain filling. Coupled with precipitation deficits, these anomalies elevate the risk of yield loss.
+## 1. Core Problem & Objective
+In semi-arid and agricultural regions, detecting crop failure early is critical for food security and water management. Traditional ground observations are slow and spatially limited. Optical satellite sensors can track vegetation greenness, but greenness alone is a lagging indicator—plants often retain structural leaf color for days after severe heat or moisture stress has already begun damaging yield.
 
-## Analytical Formulas
-### NDVI
+AgriSens Core solves this by pairing optical vegetation indices with local temperature $z$-scores and precipitation metrics. By analyzing atmospheric thermal anomalies alongside multi-spectral bands, the pipeline flags crop canopy stress before visual damage appears on ground inspection.
+
+---
+
+## 2. Mathematical Framework & Index Calculations
+
+All computations run dynamically on tabular geospatial and satellite feeds (`satellite_crop_data.csv`). The core pipeline executes three primary statistical and band-math operations:
+
+### A. Normalized Difference Vegetation Index (NDVI)
+NDVI measures plant photosynthetic activity by comparing Near-Infrared (NIR) light reflection against Red light absorption by chlorophyll:
+
 $$\text{NDVI} = \frac{\text{NIR} - \text{Red}}{\text{NIR} + \text{Red}}$$
-where **NIR** and **Red** are the surface reflectance values in the near‑infrared and red spectral bands, respectively.
 
-### Temperature Anomaly Z‑Score
-$$Z_{\text{temp}} = \frac{\text{LST}_{\text{obs}} - \mu_{\text{LST}}}{\sigma_{\text{LST}}}$$
-* $\text{LST}_{\text{obs}}$ – observed land‑surface temperature.
-* $\mu_{\text{LST}}$, $\sigma_{\text{LST}}$ – historical mean and standard deviation for the same day‑of‑year.
+* **Input Data:** `NIR` and `Red` spectral reflectance values.
+* **Interpretation:** Values above $0.5$ indicate dense, healthy canopy. Rapid drops below regional baselines signal leaf wilting, senescence, or physical destruction.
 
-### Integrated Crop Stress Index (ICSI)
-The ICSI combines vegetation health, thermal stress, and moisture deficit into a single metric:
-$$\text{ICSI} = w_{\text{NDVI}} \cdot (1 - \text{NDVI}) + w_{\text{temp}} \cdot \max(0, Z_{\text{temp}}) + w_{\text{prec}} \cdot \Delta\text{P}\$$
-* $w_{\text{NDVI}}, w_{\text{temp}}, w_{\text{prec}}$ – weighting coefficients (default 0.4, 0.35, 0.25).
-* $\Delta\text{P}$ – precipitation deficit (mm) relative to the climatological norm for the growth window.
+### B. Thermal Anomaly Z-Score ($Z_{\text{temp}}$)
+To identify localized heat shocks independent of normal seasonal variation, Land Surface Temperature ($\text{LST}$) is normalized against rolling 30-day regional baselines (`temp_mean_30d` and `temp_std_30d`):
 
-## Risk Indicator Table
-| Stress Tier | $Z_{\text{temp}}$ Threshold | $\Delta\text{NDVI}$ (ΔNDVI) | $\Delta\text{P}$ (mm deficit) | Typical Impact |
-|------------|----------------------------|-----------------------------|--------------------------------|----------------|
-| Normal     | < 1.0                      | < 0.02                     | < 5                            | No visible stress |
-| Watch      | 1.0 – 1.5                  | 0.02 – 0.05                | 5 – 15                         | Minor chlorosis |
-| Warning    | 1.5 – 2.0                  | 0.05 – 0.10                | 15 – 30                        | Reduced leaf area |
-| Critical   | > 2.0                      | > 0.10                     | > 30                           | Wilting, yield loss |
+$$Z_{\text{temp}} = \frac{\text{LST}_{\text{observed}} - \text{LST}_{\text{mean}}}{\text{LST}_{\text{std}}}$$
 
-## Future Roadmap
-- **Synthetic Aperture Radar (SAR) integration** – Incorporate moisture‑sensitive radar backscatter to improve drought detection under cloud cover.
-- **Phenology‑aware weighting** – Dynamically adjust $w_{\text{temp}}$ and $w_{\text{prec}}$ based on growth stage using vegetation phenology curves.
-- **Machine‑learning yield prediction** – Train regression models on historic yield data using ICSI and ancillary variables (soil type, management practices).
+* **Calculation:** Expresses how many standard deviations the current surface temperature deviates from the 30-day rolling mean.
+* **Interpretation:** $Z_{\text{temp}} > +1.5\sigma$ triggers early thermal stress warnings, indicating stomatal throttling where plants restrict water loss and cease photosynthesis.
 
-The methodology outlined here provides a reproducible framework for early‑warning agro‑environmental monitoring.
+### C. Integrated Crop Stress Index (ICSI)
+To prevent reliance on any single metric, the system synthesizes spectral greenness, heat deviation, and 30-day accumulated rainfall (`precip_mm`) into a continuous composite stress score:
+
+$$\text{ICSI} = w_1 \cdot (1 - \text{NDVI}_{\text{norm}}) + w_2 \cdot \text{Normalize}(Z_{\text{temp}}) + w_3 \cdot \text{Normalize}(\text{Precip}_{\text{deficit}})$$
+
+Where weights $w_1, w_2, w_3$ balance optical response, heat spikes, and moisture scarcity to produce a unified risk tier (Normal, Watch, Warning, Critical).
+
+---
+
+## 3. Data Pipeline & System Execution
+
+1. **Ingestion & Preprocessing:** Loads tabular satellite and weather records using Pandas, filtering missing or corrupt band observations.
+2. **Feature Engineering:** Vectorized NumPy operations calculate pixel/coordinate-level NDVI, temperature $z$-scores, and rainfall deficits across the temporal dataset.
+3. **Risk Categorization & Visualization:** Outputs processed DataFrames to `data/processed/`, driving interactive charts in Matplotlib and Streamlit dashboard maps.
+
+---
+
+## 4. Git Execution
+Once `RESEARCH.md` is updated, execute:
+1. `git add RESEARCH.md`
+2. `git commit -m "docs: align RESEARCH.md directly with python data pipeline code"`
+3. `git push origin main`
+
+Print the terminal output confirming the push to GitHub.

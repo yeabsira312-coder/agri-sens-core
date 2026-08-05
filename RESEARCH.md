@@ -1,53 +1,71 @@
 # AgriSens Core — Technical Research & Methodological Overview
 
-## 1. Core Problem & Objective
-In semi-arid and agricultural regions, detecting crop failure early is critical for food security and water management. Traditional ground observations are slow and spatially limited. Optical satellite sensors can track vegetation greenness, but greenness alone is a lagging indicator—plants often retain structural leaf color for days after severe heat or moisture stress has already begun damaging yield.
+## Abstract
+AgriSens Core is an open‑source analytics pipeline that fuses satellite‑derived spectral indices with surface‑temperature and precipitation anomaly metrics to produce an early‑warning stress indicator for agricultural lands. By operating on per‑pixel time series, the system quantifies canopy loss, heat stress, and moisture deficit in a unified composite score, enabling rapid identification of high‑risk zones without requiring on‑ground measurements.
 
-AgriSens Core solves this by pairing optical vegetation indices with local temperature $z$-scores and precipitation metrics. By analyzing atmospheric thermal anomalies alongside multi-spectral bands, the pipeline flags crop canopy stress before visual damage appears on ground inspection.
+## 1. Problem Statement
+In semi‑arid and rain‑fed cropping systems, drought and heat spikes can reduce yields long before visual symptoms appear. Ground‑based observations are sparse and delayed, while raw satellite imagery offers only indirect clues. The research challenge is to translate raw reflectance and thermal observations into a physically‑meaningful, quantitative stress metric that can be computed automatically for any region.
 
----
+## 2. Data & Methodology
+The pipeline ingests a CSV (`satellite_crop_data.csv`) containing calibrated reflectance bands (NIR, Red, Blue), daily land‑surface temperature (LST) in °C, and daily precipitation in mm. Missing values are filtered out during preprocessing.
 
-## 2. Mathematical Framework & Index Calculations
-
-All computations run dynamically on tabular geospatial and satellite feeds (`satellite_crop_data.csv`). The core pipeline executes three primary statistical and band-math operations:
-
-### A. Normalized Difference Vegetation Index (NDVI)
-NDVI measures plant photosynthetic activity by comparing Near-Infrared (NIR) light reflection against Red light absorption by chlorophyll:
+### 2.1 Normalized Difference Vegetation Index (NDVI)
+The NDVI is computed per the classic definition:
 
 $$\text{NDVI} = \frac{\text{NIR} - \text{Red}}{\text{NIR} + \text{Red}}$$
 
-* **Input Data:** `NIR` and `Red` spectral reflectance values.
-* **Interpretation:** Values above $0.5$ indicate dense, healthy canopy. Rapid drops below regional baselines signal leaf wilting, senescence, or physical destruction.
+Implemented in `src/analytics/indices.py` using NumPy with explicit zero‑division protection and clipping to the range \([-1,\,1]\).
 
-### B. Thermal Anomaly Z-Score ($Z_{\text{temp}}$)
-To identify localized heat shocks independent of normal seasonal variation, Land Surface Temperature ($\text{LST}$) is normalized against rolling 30-day regional baselines (`temp_mean_30d` and `temp_std_30d`):
+### 2.2 Land‑Surface Temperature Z‑Score ($Z_{\text{LST}}$)
+A rolling 30‑day baseline of LST is maintained for each pixel. The Z‑score quantifies deviation from the local climatology:
 
-$$Z_{\text{temp}} = \frac{\text{LST}_{\text{observed}} - \text{LST}_{\text{mean}}}{\text{LST}_{\text{std}}}$$
+$$Z_{\text{LST}} = \frac{\text{LST}_{\text{obs}} - \mu_{\text{LST,30d}}}{\sigma_{\text{LST,30d}}}$$
 
-* **Calculation:** Expresses how many standard deviations the current surface temperature deviates from the 30-day rolling mean.
-* **Interpretation:** $Z_{\text{temp}} > +1.5\sigma$ triggers early thermal stress warnings, indicating stomatal throttling where plants restrict water loss and cease photosynthesis.
+Values $>+1.5$ indicate statistically significant heat stress.
 
-### C. Integrated Crop Stress Index (ICSI)
-To prevent reliance on any single metric, the system synthesizes spectral greenness, heat deviation, and 30-day accumulated rainfall (`precip_mm`) into a continuous composite stress score:
+### 2.3 Soil‑Moisture Z‑Score ($Z_{\text{SM}}$)
+Analogous to the temperature score, soil‑moisture (derived from the `GWETTOP` field of the NASA POWER API) is normalised:
 
-$$\text{ICSI} = w_1 \cdot (1 - \text{NDVI}_{\text{norm}}) + w_2 \cdot \text{Normalize}(Z_{\text{temp}}) + w_3 \cdot \text{Normalize}(\text{Precip}_{\text{deficit}})$$
+$$Z_{\text{SM}} = \frac{\text{SM}_{\text{obs}} - \mu_{\text{SM,30d}}}{\sigma_{\text{SM,30d}}}$$
 
-Where weights $w_1, w_2, w_3$ balance optical response, heat spikes, and moisture scarcity to produce a unified risk tier (Normal, Watch, Warning, Critical).
+Negative values signal moisture deficit.
+
+### 2.4 Integrated Crop Stress Index (ICSI) / Composite Agricultural Risk Index (CARI)
+The core composite metric blends three risk components using a logistic sigmoid transform $\Phi(z) = \frac{1}{1+e^{-z}}$ (implemented in `RiskEngine.logistic_transform`). The final score is scaled to \([0,100]\):
+
+$$\begin{aligned}
+\Delta_{\text{NDVI}} &= \frac{\text{NDVI}_{\text{obs}} - \text{NDVI}_{\text{baseline}}}{\text{NDVI}_{\text{baseline}}} \\
+\text{CanopyRisk} &= \Phi\bigl(-5\,\Delta_{\text{NDVI}}\bigr) \\
+\text{MoistureRisk} &= \Phi\bigl(-Z_{\text{SM}}\bigr) \\
+\text{HeatRisk} &= \Phi\bigl(Z_{\text{LST}}\bigr) \\
+\text{CARI} &= \bigl[0.40\times\text{CanopyRisk} + 0.35\times\text{MoistureRisk} + 0.25\times\text{HeatRisk}\bigr]\times100
+\end{aligned}$$
+
+The implementation lives in `src/analytics/risk_engine.py`. The score is rounded to two decimals before classification.
+
+## 3. Risk Indicator Matrix
+| Component | Input Variable | Transformation | Weight | Thresholds (Risk Tier) |
+|-----------|----------------|----------------|--------|-----------------------|
+| Canopy Loss | $\Delta_{\text{NDVI}}$ | $\Phi(-5\Delta_{\text{NDVI}})$ | 0.40 | $\Delta_{\text{NDVI}} < -0.2$ yields high canopy risk |
+| Soil‑Moisture Deficit | $Z_{\text{SM}}$ | $\Phi(-Z_{\text{SM}})$ | 0.35 | $Z_{\text{SM}} < -1.5$ ⇒ strong deficit |
+| Heat Stress | $Z_{\text{LST}}$ | $\Phi(Z_{\text{LST}})$ | 0.25 | $Z_{\text{LST}} > +1.5$ ⇒ severe heat |
+
+The overall CARI tiers are:
+- **NOMINAL**: CARI < 30
+- **MODERATE STRESS**: 30 ≤ CARI < 55
+- **HIGH RISK**: 55 ≤ CARI < 75
+- **CRITICAL RISK**: CARI ≥ 75
+
+## 4. Limitations
+- **Temporal Resolution**: Daily satellite composites limit detection of sub‑daily heat spikes.
+- **Cloud Contamination**: NDVI is masked only for obvious cloud pixels; thin clouds can still bias reflectance.
+- **Single‑Sensor Dependence**: Current implementation relies on MODIS‑style band set; other sensors require additional band‑order handling.
+
+## 5. Future Extensions
+- **Synthetic Aperture Radar (SAR) Integration** – SAR backscatter can provide moisture information under cloud cover.
+- **Dynamic Phenology Curves** – Incorporate vegetation phenology models to adjust baseline NDVI per growth stage.
+- **Real‑time Sensor Streams** – Fuse IoT soil‑moisture probes for higher‑frequency moisture anomalies.
+- **Multi‑spectral Fusion** – Extend the index suite with red‑edge and SWIR bands for improved stress discrimination.
 
 ---
-
-## 3. Data Pipeline & System Execution
-
-1. **Ingestion & Preprocessing:** Loads tabular satellite and weather records using Pandas, filtering missing or corrupt band observations.
-2. **Feature Engineering:** Vectorized NumPy operations calculate pixel/coordinate-level NDVI, temperature $z$-scores, and rainfall deficits across the temporal dataset.
-3. **Risk Categorization & Visualization:** Outputs processed DataFrames to `data/processed/`, driving interactive charts in Matplotlib and Streamlit dashboard maps.
-
----
-
-## 4. Git Execution
-Once `RESEARCH.md` is updated, execute:
-1. `git add RESEARCH.md`
-2. `git commit -m "docs: align RESEARCH.md directly with python data pipeline code"`
-3. `git push origin main`
-
-Print the terminal output confirming the push to GitHub.
+*All formulas correspond line‑for‑line to the Python implementation in the repository.*
